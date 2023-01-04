@@ -1,0 +1,32 @@
+<p>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <h1 class="navTitle">ECO - Sneaker Shop</h1>
+          
+          <div class="navMenu">
+            <a mat-button [routerLink]="'/home'"> <mat-icon aria-hidden="false" aria-label="Home icon" fontIcon="home"></mat-icon> </a>
+            <!-- Aqui habra un IF para si está logged in se muestre el icono del perfil y si no el iniciar sesión-->
+            <!-- Será un dropdown menu => si está iniciada la sesión tendrá tres enlaces: Perfil, Mis compras, Mis ventas y Cerrar sesión => Si no está iniciada sesión será un dropdown menu con un formulario para iniciar sesión y un enlace para registrarse debajo del botón de iniciar sesión-->
+            <div *ngIf="isLogged">
+                <button mat-button [matMenuTriggerFor]="menu"> Menu </button>
+                <mat-menu #menu="matMenu" class="menuDropDown">
+                    <button mat-menu-item> Perfil </button>
+                    <button mat-menu-item> Mis compras </button>
+                    <button mat-menu-item> Mis ventas </button>
+                    <button mat-menu-item> Cerrar sesión </button>
+                </mat-menu>
+            </div>
+    
+           <div *ngIf="!isLogged">
+            <button mat-button [matMenuTriggerFor]="menu"> Menu </button>
+            <mat-menu #menu="matMenu" class="menuDropDown">
+                <button mat-menu-item> Iniciar sesión </button>
+                <button mat-menu-item> Registrarse </button>
+            </mat-menu>
+           </div>
+      
+          </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+  
