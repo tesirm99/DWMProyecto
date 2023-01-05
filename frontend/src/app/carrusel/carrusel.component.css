@@ -1,0 +1,64 @@
+.dsc-carrusel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dsc-carrusel__btns {
+    position: absolute;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  
+}
+.dsc-carrusel__steps {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.dsc-carrusel__content {
+    text-align: center;
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    overflow: hidden;
+}
+.dsc-carrusel__content-item{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 1s all ease-in;
+}
+.dsc-carrusel__content-item h1{
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase;
+        z-index: 1;
+}
+
+.dsc-carrusel__steps-step {
+    height: 8px;
+    width: 25px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.75s all ease-in-out;
+}
+.dsc-carrusel__steps-step :hover, :active{
+    opacity: 0.7;
+    background: #fff;
+}
