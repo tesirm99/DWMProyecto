@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ import { SignupComponent } from '../signup/signup.component';
 
 export class NavbarComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private storageService: StorageService) { }
 
   @Input()
   isLogged = false;
@@ -32,8 +33,16 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  logOut(): void {
+    this.storageService.clean();
+    this.isLogged = false;
+    window.location.reload();
+  }
+
   
   ngOnInit(): void {
+    this.isLogged = this.storageService.isLoggedIn();
+    console.log("isLogged: ", this.isLogged);
     
   }
 

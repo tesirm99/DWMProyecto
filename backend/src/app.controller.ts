@@ -9,10 +9,11 @@ import { AuthService } from './auth/auth.service';
 export class AppController {
   constructor(private authService: AuthService) {}
 
-  @UseGuards(LocalAuthGuard)
+  //@UseGuards(LocalAuthGuard) Esto se puede poner pero hay que ponerle el tag @Public que hay que hacerlo tmb
   @Post('auth/login')
   async login(@Request() req) {
-    return this.authService.login(req.user);
+    
+    return this.authService.login(req.body);
   }
 
   @UseGuards(JwtAuthGuard)

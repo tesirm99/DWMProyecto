@@ -8,7 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  imports: [AuthModule, UserModule, MongooseModule.forRoot('mongodb://127.0.0.1:27017/dwm-proyecto?directConnection=true', {useNewUrlParser:true})],  providers: [AppService],
+  imports: [AuthModule, UserModule, MongooseModule.forRoot('mongodb://user:dwmpassword@127.0.0.1:27017/dwm-proyecto?directConnection=true', {useNewUrlParser:true})],  providers: [AppService],
   controllers: [AppController],
 })
 export class AppModule {}

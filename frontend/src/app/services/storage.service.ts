@@ -16,6 +16,8 @@ export class StorageService {
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    console.log("Saving user session: ", user);
+    
   }
 
   public getUser(): any {
@@ -29,11 +31,8 @@ export class StorageService {
 
   public isLoggedIn(): boolean {
     const user = this.getUser();
-    if(user) {
-      return true;
-    }
 
-    return false;
-    //Esto mola pero no se si seria asi ==> return (user && user.accessToken) ? true : false;
+    return (user && user.access_token) ? true : false;
+
   }
 }

@@ -24,6 +24,7 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
 
 import { httpInterceptorProviders } from './_helpers/auth.interceptor';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
     SignupComponent,
     CarruselComponent,
     ListaProductosComponent,
-    PasswordPatternDirective
+    PasswordPatternDirective,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
