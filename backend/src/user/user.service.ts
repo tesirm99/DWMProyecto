@@ -7,18 +7,6 @@ import { CreateUserDto } from './create-user.dto';
 
 @Injectable()
 export class UserService {
-    // private readonly users = [
-    //     {
-    //       userId: 1,
-    //       username: 'patata',
-    //       password: 'patata',
-    //     },
-    //     {
-    //       userId: 2,
-    //       username: 'patata2',
-    //       password: 'patata2',
-    //     },
-    //   ];
 
       constructor(
         @InjectConnection() private connection: Connection,
@@ -37,6 +25,10 @@ export class UserService {
 
       async create(createUserDto: CreateUserDto): Promise<User> {
         const createdUser = await this.userModel.create(createUserDto);
+
+        console.log(createdUser);
+        
+
         return createdUser;
       }
     
