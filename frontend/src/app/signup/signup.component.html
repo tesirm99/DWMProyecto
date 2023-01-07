@@ -5,7 +5,6 @@
         *ngIf="!isSuccessful"
         name="form"
         #f="ngForm"
-        (ngSubmit)="f.form.valid && submit()"
         novalidate
         [appMatchPassword]="['password', 'confirmPassword']"
         >

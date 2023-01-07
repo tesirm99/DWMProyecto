@@ -38,7 +38,6 @@ export class NavbarComponent implements OnInit {
     this.isLogged = false;
     window.location.reload();
   }
-
   
   ngOnInit(): void {
     this.isLogged = this.storageService.isLoggedIn();

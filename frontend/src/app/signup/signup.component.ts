@@ -47,4 +47,5 @@ export class SignupComponent {
     this.form.password = "";
     this.dialogRef.close();
   }
+  
 }
