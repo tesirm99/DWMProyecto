@@ -1,43 +1,65 @@
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { compare } from 'bcrypt';
+import { compare, hash } from 'bcrypt';
+
+const saltRounds = 10;
+
 @Injectable()
 export class AuthService {
+
   constructor(
     private usersService: UserService,
     private jwtService: JwtService
   ) {}
 
-  async validateUser(username: string, pass: string): Promise<Boolean> {
-    const user = await this.usersService.findOne(username)[0];
+  async validateUser(email: string, pass: string): Promise<any> {
+    const user = await this.usersService.findOne(email);
     
-    if (user == null || user == undefined) {
-      return false;
-    }
+    console.log('user: ', user);
+    
 
+    if (user == null || user == undefined) {
+      return null;
+    }
+    
     const match = await compare(pass, user.password);
 
+    console.log('match: ', match);
+    
+
     if(match){
-      return true;
+      return user;
     }
 
-    return false;
+    return null;
    
   }
 
   //Genera el token JWT
-  async login(user: any) {
-    console.log(user);
+  async login(user: any) {    
+
+    const validation = await this.validateUser(user.email, user.password);    
+
+    if(validation !== null) {
+      const payload = { username: user.username, sub: user.userId };
+      return {
+        id: validation._id,
+        access_token: this.jwtService.sign(payload),
+      };
+    } else {
+      return HttpStatus.I_AM_A_TEAPOT;
+    }
+
     
-    const payload = { username: user.username, sub: user.userId };
-    return {
-      access_token: this.jwtService.sign(payload),
-    };
   }
 
   async register(user: any) {
   
+    const hashedPassword = await hash(user.password, saltRounds);
+
+    user.password = hashedPassword;
+    
     this.usersService.create(user);
 
   }

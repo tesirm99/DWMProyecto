@@ -41,7 +41,6 @@ export class NavbarComponent implements OnInit {
   
   ngOnInit(): void {
     this.isLogged = this.storageService.isLoggedIn();
-    console.log("isLogged: ", this.isLogged);
     
   }
 

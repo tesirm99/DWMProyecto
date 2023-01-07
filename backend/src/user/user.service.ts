@@ -1,5 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { RegisterDto } from './register.dto';
+import { Injectable } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { Connection, Model } from 'mongoose';
 import { User, UserDocument } from './user.schema';
@@ -14,16 +13,17 @@ export class UserService {
           //connection.
         }
     
-      async findOne(username: string): Promise<User[]> {
-        console.log(username);
+      async findOne(email: string): Promise<User> {
+        console.log(email);
         
-        const q = await this.userModel.find({username: username}).exec();
+        const q = await this.userModel.find({email: email}).exec();
         console.log(q);
         
-        return q;
+        return q[0];
       }
 
       async create(createUserDto: CreateUserDto): Promise<User> {
+        
         const createdUser = await this.userModel.create(createUserDto);
 
         console.log(createdUser);
@@ -41,6 +41,10 @@ export class UserService {
           .findByIdAndRemove({ _id: id })
           .exec();
         return deletedCat;
+      }
+
+      async getUserData(email: string): Promise<User> {
+        return await this.findOne(email);
       }
 
 }
