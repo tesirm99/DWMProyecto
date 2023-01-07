@@ -18,7 +18,7 @@ export class ProductController {
 
     @Post('/create')
     async createProduct(@Request() req) {
-        return await this.productService.createProduct(req);
+        return await this.productService.createProduct(req.body);
     }
 
 

@@ -15,18 +15,12 @@ export class AuthService {
 
   async validateUser(email: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(email);
-    
-    console.log('user: ', user);
-    
 
     if (user == null || user == undefined) {
       return null;
     }
     
     const match = await compare(pass, user.password);
-
-    console.log('match: ', match);
-    
 
     if(match){
       return user;

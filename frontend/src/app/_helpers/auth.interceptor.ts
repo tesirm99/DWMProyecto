@@ -13,7 +13,8 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     const token = this.storageService.getToken();
 
     const authReq = req.clone({
-      headers: req.headers.set('Authorization', token)
+      //headers: req.headers.set('Authorization', token)
+      withCredentials: true
     });
 
     return next.handle(authReq);

@@ -30,6 +30,9 @@ export class ProductService {
 
     async createProduct(createdProductDto: any) {
 
+        console.log('Create product: ', createdProductDto);
+        
+
         const createdProduct = await this.productModel.create(createdProductDto);
 
         console.log('Created product: ', createdProduct);

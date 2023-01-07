@@ -17,7 +17,12 @@ export class StorageService {
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user.email));
+
+    if(user.id == null || user.id == undefined){
+      return;
+    }
+
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user.id));
     window.sessionStorage.setItem(TOKEN_KEY, JSON.stringify(user.access_token));
     
   }
@@ -33,7 +38,7 @@ export class StorageService {
 
   public getToken(): any {
     const token = window.sessionStorage.getItem(TOKEN_KEY);
-    if (token) {
+    if (token && token !== 'undefined') {
       return JSON.parse(token);
     }
     return null;

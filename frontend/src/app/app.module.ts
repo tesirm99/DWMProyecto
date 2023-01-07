@@ -27,6 +27,8 @@ import { PasswordPatternDirective } from './directives/password-pattern.directiv
 import { ProfileComponent } from './profile/profile.component';
 import { ListaComprasComponent } from './lista-compras/lista-compras.component';
 import { ListaVentasComponent } from './lista-ventas/lista-ventas.component';
+import { NewSaleComponent } from './newsale/newsale.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ListaVentasComponent } from './lista-ventas/lista-ventas.component';
     PasswordPatternDirective,
     ProfileComponent,
     ListaComprasComponent,
-    ListaVentasComponent
+    ListaVentasComponent,
+    NewSaleComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { ListaVentasComponent } from './lista-ventas/lista-ventas.component';
     MatDialogModule,
     MatInputModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline' }},

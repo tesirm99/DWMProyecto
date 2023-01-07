@@ -13,13 +13,32 @@ export class UserService {
           //connection.
         }
     
+      //Solo deberia usarse internamente
       async findOne(email: string): Promise<User> {
-        console.log(email);
         
         const q = await this.userModel.find({email: email}).exec();
-        console.log(q);
+        console.log('Found user', q);
         
         return q[0];
+      }
+
+      //Este es el que se usa desde afuera
+      async findOneById(id: string): Promise<any> {
+        const u = {
+          _id: null,
+          email: '',
+          username: ''
+        }
+
+        const q = await this.userModel.find({_id: id}).exec();
+        console.log('Found user', q);
+        
+        u._id = q[0]._id;
+        u.email = q[0].email;
+        u.username = q[0].username;
+
+        return u;
+
       }
 
       async create(createUserDto: CreateUserDto): Promise<User> {
@@ -43,8 +62,10 @@ export class UserService {
         return deletedCat;
       }
 
-      async getUserData(email: string): Promise<User> {
-        return await this.findOne(email);
+      async getUserData(id: string): Promise<User> {
+        return await this.findOneById(id);
       }
+
+
 
 }

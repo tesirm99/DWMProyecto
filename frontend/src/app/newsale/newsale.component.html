@@ -1,0 +1,98 @@
+<div class="container">
+    <h2>Signup</h2>
+    
+    <form
+        *ngIf="!isSuccessful"
+        name="form"
+        #f="ngForm"
+        novalidate
+        >
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Product name:</mat-label>
+                <input matInput placeholder="Enter the product's name" value="" name="prdName" type="text"
+                    [(ngModel)]="form.name"
+                    class="form-control"
+                    required
+                    minLength="3"
+                    maxLength="20"
+                    #prdName="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && prdName.errors }">
+            </mat-form-field>
+
+            <div class="invalid-feedback" *ngIf="f.submitted && prdName.errors">
+                <div *ngIf="prdName.errors['required']">Product's name is required</div>
+                <div *ngIf="prdName.errors['minlength']">Product's name must be at least 3 characters</div>
+                <div *ngIf="prdName.errors['maxlength']">Product's name must be at most 20 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Description</mat-label>
+                <!--<input matInput placeholder="Describe briefly your product" name="desc" [(ngModel)]="form.description"
+                    #desc="ngModel"
+                    maxlength="256"
+                    type="text"
+                    [ngClass]="{ 'is-invalid': f.submitted && desc.errors }">-->
+                
+                <textarea matInput
+                        cdkTextareaAutosize
+                        #autoresize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+            
+            <!--<div class="invalid-feedback" *ngIf="desc.errors && f.submitted">
+                <div *ngIf="desc.errors['maxLength']">The description must be under 256 characters</div>
+            </div>-->
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="Enter a price (€) for your product" value="" name="price" type="number"
+                    [(ngModel)]="form.price"
+                    required
+                    #price="ngModel"
+                    min="0"
+                    max="100000000"
+                    [ngClass]="{ 'is-invalid': f.submitted && price.errors }">
+            </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Size</mat-label>
+                <input matInput placeholder="Enter the size of your product" value="" name="size" type="number"
+                    [(ngModel)]="form.size"
+                    required
+                    #size="ngModel"
+                    min="0"
+                    max="100"
+                    [ngClass]="{ 'is-invalid': f.submitted && size.errors }">
+            </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Image</mat-label>
+                <input matInput placeholder="Enter the link to an image of your product" value="" name="image" type="text"
+                    [(ngModel)]="form.image"
+                    required
+                    #image="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && image.errors }">
+            </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+            <button mat-raised-button color="primary" (click)="submit()">New sale!</button>
+        </div>
+    </form>
+
+    
+</div>
