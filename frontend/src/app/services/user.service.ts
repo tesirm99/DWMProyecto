@@ -26,7 +26,7 @@ export class UserService {
     return this.http.get(API_URL + 'user/purchases', { responseType: 'text', params: { id: this.storageService.getUser() } });
   }
 
-  newSale(name: string, description: string, size: number, image: string, price: number): Observable<any> {
+  newSale(name: string, description: string, price: number, image: string, size: number): Observable<any> {
     const id = this.storageService.getUser();
 
     const body = {

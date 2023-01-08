@@ -41,7 +41,9 @@
                         cdkTextareaAutosize
                         #autoresize="cdkTextareaAutosize"
                         cdkAutosizeMinRows="1"
-                        cdkAutosizeMaxRows="5"></textarea>
+                        cdkAutosizeMaxRows="5"
+                        name="desc"
+                        [(ngModel)]="form.description"></textarea>
             </mat-form-field>
             
             <!--<div class="invalid-feedback" *ngIf="desc.errors && f.submitted">
