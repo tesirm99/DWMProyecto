@@ -1,20 +1,7 @@
-<div class="dsc-carrusel" [ngStyle]="{'min-height': finalHeight}">
-    <div class ="dsc-carrusel__btns">
-        <i class="fa fa-chevron-circle-left" (click)="setBack()"></i>
-        <i class="fa fa-chevron-circle-right" (click)="setNext()"></i>
-    </div>
-    <div class="dsc-carrusel__content">
-        <ng-container *ngFor="let section of items;">
-            <div class="dsc-carrusel__content-item" [ngStyle]="{'background-image': 'url(' + section.url + ')', 'margin-left': section.marginLeft + '%' }">
-                <h1>{{section.title}}</h1>
-            </div>
-        </ng-container>
-    </div>
-    <div class="dsc-carrusel__steps">
-        <div 
-            class="dsc-carrusel__steps-step
-            dsc-carrusel__steps-step-{{currentPosition === item.id ? 'active': ''}}" 
-            *ngFor="let item of items" (click)="setCurrentPosition(item.id)">
-        </div>
-    </div>
+<div class="slick-wrapper">
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let image of images" class="slide">
+    <a  class="link"  [href]="image?.href"><img width="auto" height="250px" [src]="image?.img"></a>
+  </div>
+</ngx-slick-carousel>
 </div>
