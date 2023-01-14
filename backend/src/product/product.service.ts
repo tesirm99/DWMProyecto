@@ -58,5 +58,41 @@ export class ProductService {
         return q;
     }
 
+      async findOneByName(name: string): Promise<Product> {
+        const q = await this.productModel.find({name: name}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
+      async findOneByDescription(description: string): Promise<Product> {
+        const q = await this.productModel.find({description: description}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
+      async findOneByPrice(price: string): Promise<Product> {
+        const q = await this.productModel.find({price: price}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
+      async findOneByImage(image: string): Promise<Product> {
+        const q = await this.productModel.find({image: image}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
+      async findOneByOwner(owner: string): Promise<Product> {
+        const q = await this.productModel.find({owner: owner}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
+      async findOneBySize(size: string): Promise<Product> {
+        const q = await this.productModel.find({size: size}).exec();
+        console.log('Found product', q);
+        return q[0];
+      }
+
 
 }
