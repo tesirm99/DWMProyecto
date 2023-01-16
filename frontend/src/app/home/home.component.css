@@ -84,3 +84,49 @@ fieldset {
     background-color: rgba(239, 237, 237, 0.893);
     
 }
+
+.row_filter-list{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.text_filters{
+    position: relative;
+    padding: 15px 20px 1px 30px;
+}
+.filter__categories__all span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.filter__categories ul {
+	border: 1px solid #ebebeb;
+	padding-left: 40px;
+	padding-bottom: 12px;
+}
+
+.filter__categories ul li {
+	list-style: none;
+}
+
+.filter__categories ul li a {
+	font-size: 16px;
+	color: #1c1c1c;
+	line-height: 39px;
+	display: block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+mat-slider {
+    width: 50%;
+}
+#slider-range .ui-slider-range {
+    background-color: #3f51b5;
+}
+.slider_range{
+    padding-left: 40px;
+	padding-bottom: 12px;
+}

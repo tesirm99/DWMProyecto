@@ -1,4 +1,6 @@
-<head><title>DWM-Sneaker Shop</title></head>
+<head>
+    <title>DWM-Sneaker Shop</title>
+</head>
 
 <body>
     <div class="head">
@@ -20,17 +22,48 @@
             </fieldset>
         </form>
     </div>
-<div class="components">
-    <div class="carousel">
-        <h2 class="title_div">
-            Trending Now
-        </h2>   
-        <div class="home_carousel"> 
-            <app-carrusel></app-carrusel>
+
+    <div class="components">
+        <div class="carousel">
+            <h2 class="title_div">
+                Trending Now
+            </h2>
+            <div class="home_carousel">
+                <app-carrusel></app-carrusel>
+            </div>
+        </div>
+        <div class="row_filter-list">
+            <div class="filter__categories">
+                <h2 class="text_filters">BRANDS</h2>
+                <ul>
+                    <li><a href="#">YEEZY</a></li>
+                    <li><a href="#">REEBOK</a></li>
+                    <li><a href="#">CONVERSE</a></li>
+                    <li><a href="#">VANS</a></li>
+                    <li><a href="#">SAUCONY</a></li>
+                    <li><a href="#">DIADORA</a></li>
+                    <li><a href="#">ADIDAS</a></li>
+                    <li><a href="#">AIR JORDAN</a></li>
+                    <li><a href="#">NIKE</a></li>
+                    <li><a href="#">NEW BALANCE</a></li>
+                </ul>
+                <div class="filter__categories__price">
+                    <h2 class="text_filters">PRICES</h2>
+                    <div class="slider_range">
+                        <app-slider></app-slider>
+                    </div>
+                </div>
+                <div class="filter__categories__size">
+                    <h2 class="text_filters">SIZES</h2>
+                    <div class="slider_range">
+                        <app-select></app-select>
+                    </div>
+                </div>
+            </div>
+            <div class="list_products">
+                <app-lista-productos></app-lista-productos>
+            </div>
         </div>
     </div>
-</div>
-    
-    
-    <app-lista-productos></app-lista-productos>
+    <app-footer></app-footer>
 </body>
