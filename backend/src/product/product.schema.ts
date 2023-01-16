@@ -24,6 +24,9 @@ export class Product {
     @Prop()
     size: number;
 
+    @Prop()
+    status: string;
+
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
