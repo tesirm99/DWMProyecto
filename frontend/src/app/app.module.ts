@@ -30,6 +30,8 @@ import { ListaVentasComponent } from './lista-ventas/lista-ventas.component';
 import { NewSaleComponent } from './newsale/newsale.component';
 import { CommonModule } from '@angular/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule, 
-    SlickCarouselModule
+    SlickCarouselModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline' }},

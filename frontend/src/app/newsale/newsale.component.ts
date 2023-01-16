@@ -32,6 +32,7 @@ export class NewSaleComponent {
         console.log(data);
         this.isSuccessful = true;
         this.clear();
+        window.location.reload();
       },
       error: err => {
         console.log(err);

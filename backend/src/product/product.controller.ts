@@ -11,8 +11,10 @@ export class ProductController {
         return await this.productService.getAllProductList();
     }
 
-    @Get('/list/:ownerId')
+    @Get('/listByOwner/:ownerId')
     async getProductList(@Param('ownerId') ownerId: string) {
+        console.log('Get Product List from ' + ownerId);
+        
         return await this.productService.getProductList(ownerId);
     }
 
@@ -27,42 +29,42 @@ export class ProductController {
         return await this.productService.updateProduct(req);
     }
 
-    @Delete('/delete/:id')
+    @Delete('/data/delete/:id')
     async deleteProduct(@Param('id') id: string) {
         return await this.productService.deleteProduct(id);
     }
 
-    @Get('/:id')
+    @Get('/data/:id')
     async getProduct(@Param('id') id: string) {
         return await this.productService.getProduct(id);
     }
 
-    @Get('/:name')
+    @Get('/data/:name')
     async findOneByName(@Param('name') name: string) {
         return await this.productService.findOneByName(name);
     }
 
-    @Get('/:description')
+    /*@Get('/:description')
     async findOneByDescription(@Param('description') description: string) {
         return await this.productService.findOneByDescription(description);
-    }
+    }*/
 
-    @Get('/:price')
+    @Get('/data/:price')
     async findOneByPrice(@Param('price') price: string) {
         return await this.productService.findOneByPrice(price);
     }
 
-    @Get('/:image')
+    @Get('/data/:image')
     async findOneByImage(@Param('image') image: string) {
         return await this.productService.findOneByImage(image);
     }
 
-    @Get('/:owner')
+    @Get('/data/:owner')
     async findOneByOwner(@Param('owner') owner: string) {
         return await this.productService.findOneByOwner(owner);
     }
 
-    @Get('/:size')
+    @Get('/data/:size')
     async findOneBySize(@Param('size') size: string) {
         return await this.productService.findOneBySize(size);
     }

@@ -1,1 +1,16 @@
 <p>lista-ventas works!</p>
+<mat-grid-list cols="1" *ngFor="let venta of sales; index as i; first as isFirst">
+        <mat-card>
+            <div class="ventaContainer">
+                <div>
+                    <img src="{{venta.image}}" height="48px" width="48px" alt="No se ha encontrado la imagen">
+                </div>
+                <div>
+                    {{venta.name}}
+                </div>
+            </div>
+            
+            
+
+        </mat-card>
+</mat-grid-list>

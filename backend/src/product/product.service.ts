@@ -16,10 +16,11 @@ export class ProductService {
         
     
     async getProduct(id: string) {
-        const q = await this.productModel.find({_id: id}).exec();
-        console.log('Found product', q)
-        
-        return q[0];
+
+      const q = await this.productModel.find({_id: id}).exec();
+      console.log('Found product', q)
+      
+      return q[0];
         
     }
 

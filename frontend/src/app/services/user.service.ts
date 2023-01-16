@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StorageService } from './storage.service';
 
@@ -24,6 +24,12 @@ export class UserService {
   //Get user purchases
   getUserPurchases(): Observable<any> {
     return this.http.get(API_URL + 'user/purchases', { responseType: 'text', params: { id: this.storageService.getUser() } });
+  }
+
+  //Get user sales
+  getUserSales(): Observable<any> {
+    
+    return this.http.get(API_URL + 'product/listByOwner/' + this.storageService.getUser(), { responseType: 'text' });
   }
 
   newSale(name: string, description: string, price: number, image: string, size: number): Observable<any> {
