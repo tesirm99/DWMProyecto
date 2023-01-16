@@ -3,12 +3,15 @@ import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { CreateProductDto } from './create-product.dto';
 import { Product, ProductDocument } from './product.schema';
 import { Connection, Model } from 'mongoose';
+import { Transaction, TransactionDocument } from 'src/transaction/transaction.schema';
+
 @Injectable()
 export class ProductService {
 
     constructor(
         @InjectConnection() private connection: Connection,
-        @InjectModel(Product.name) private productModel: Model<ProductDocument>
+        @InjectModel(Product.name) private productModel: Model<ProductDocument>,
+        @InjectModel(Transaction.name) private transactionModel: Model<TransactionDocument>
     ) {}
         
     
@@ -21,7 +24,9 @@ export class ProductService {
     }
 
     deleteProduct(id: string) {
-        throw new Error('Method not implemented.');
+        const q = this.productModel.deleteOne({_id: id}).exec();
+        console.log('Deleted product', q)
+        return q;
     }
 
     updateProduct(req: any) {
@@ -31,13 +36,21 @@ export class ProductService {
     async createProduct(createdProductDto: any) {
 
         console.log('Create product: ', createdProductDto);
-        
 
         const createdProduct = await this.productModel.create(createdProductDto);
 
         console.log('Created product: ', createdProduct);
 
-        return createdProduct;
+        const createdTransaction = await this.transactionModel.create({
+            buyer: "NONE",
+            seller: createdProductDto.owner,
+            product: createdProduct._id,
+            status: 'available'
+        });
+
+        console.log('Created transaction: ', createdTransaction);
+        
+        return [createdProduct, createdTransaction];
     }
 
     async getProductList(ownerId: string) {
