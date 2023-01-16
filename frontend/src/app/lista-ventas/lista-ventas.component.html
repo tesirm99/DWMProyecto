@@ -3,14 +3,29 @@
         <mat-card>
             <div class="ventaContainer">
                 <div>
-                    <img src="{{venta.image}}" height="48px" width="48px" alt="No se ha encontrado la imagen">
+                    <mat-card>
+                        <img mat-card-image src="{{venta.image}}" alt="No se ha encontrado la imagen">
+                    </mat-card>
                 </div>
-                <div>
-                    {{venta.name}}
+                <div class="ventaDataGrid">
+                    <div class="dataContainer">
+                        <mat-label>Producto:</mat-label>
+                        <p>{{venta.name}}</p>
+                    </div>
+                    <div class="dataContainer">
+                        <mat-label>Descripción:</mat-label>
+                        <p>{{venta.description}}</p>
+                    </div>
+                    <div class="dataContainer">
+                        <mat-label>Talla:</mat-label>
+                        <p>{{venta.size}}</p>
+                    </div>
+                    <div class="dataContainer">
+                        <mat-label>Precio:</mat-label>
+                        <p>{{venta.price}}</p>
+                    </div>
                 </div>
             </div>
             
-            
-
         </mat-card>
 </mat-grid-list>
