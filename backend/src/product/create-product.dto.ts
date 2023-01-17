@@ -6,4 +6,5 @@ export class CreateProductDto {
     readonly owner: string;
     readonly size: number;
     readonly status: string;
+    readonly brand: string;
 }

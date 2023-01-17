@@ -21,12 +21,12 @@ export class UserService {
     return this.http.get(API_URL + 'user/data', { responseType: 'text', params: { id: this.storageService.getUser() } });
   }
 
-  //Get user purchases
+  //Get user purchases // Esta no funciona
   getUserPurchases(): Observable<any> {
     return this.http.get(API_URL + 'user/purchases', { responseType: 'text', params: { id: this.storageService.getUser() } });
   }
 
-  //Get user sales
+  //Get user sales // Esta funciona
   getUserSales(): Observable<any> {
     
     return this.http.get(API_URL + 'product/listByOwner/' + this.storageService.getUser(), { responseType: 'text' });
