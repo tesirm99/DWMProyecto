@@ -32,6 +32,11 @@ import { CommonModule } from '@angular/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import {MatSliderModule} from '@angular/material/slider';
+import { SliderComponent } from './slider/slider.component';
+import { MatSelectModule } from '@angular/material/select';
+import { SelectComponent } from './select/select.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,10 @@ import { MatCardModule } from '@angular/material/card';
     ProfileComponent,
     ListaComprasComponent,
     ListaVentasComponent,
-    NewSaleComponent
+    NewSaleComponent,
+    SliderComponent,
+    SelectComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +73,9 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule, 
     SlickCarouselModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatSliderModule, 
+    MatSelectModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline' }},
