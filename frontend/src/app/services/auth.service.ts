@@ -24,10 +24,16 @@ export class AuthService {
 
   //Aqui faltan parametros
   register(email: string, password: string, username: string): Observable<any> {
+    console.log({
+      email,
+      username,
+      password
+    });
+    
     return this.http.post(AUTH_API + 'register', {
       email,
-      password,
-      username
+      username,
+      password
     }, httpOptions);
   }
 

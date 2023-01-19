@@ -26,9 +26,11 @@ export class SignupComponent {
   ) { }
 
   submit(): void{
+    
     const { username, email, password } = this.form;
-
-    this.authService.register(username, email, password).subscribe({
+    
+    
+    this.authService.register(email, password, username).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
