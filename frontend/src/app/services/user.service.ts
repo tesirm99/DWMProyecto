@@ -18,7 +18,7 @@ export class UserService {
 
   //Estos son los metodos para obtener los datos del usuario. Los que hay ahora son de prueba, habra que implementar los que se creen en la API
   getUserData(): Observable<any> {
-    return this.http.get(API_URL + 'user/data', { responseType: 'text', params: { id: this.storageService.getUser() } });
+    return this.http.get(API_URL + 'user/data/' + this.storageService.getUser(), { responseType: 'text'});
   }
 
   //Get user purchases // Esta no funciona

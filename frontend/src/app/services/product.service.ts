@@ -10,6 +10,10 @@ export class ProductService {
   
   constructor(private httpClient: HttpClient) { }
 
+  getProductData(_id: string) {
+    return this.httpClient.get(API_URL + 'data/' + _id);
+  }
+
   deleteProduct(_id: string) {
     console.log(_id);
     

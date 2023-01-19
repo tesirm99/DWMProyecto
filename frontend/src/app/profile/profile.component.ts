@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StorageService } from '../services/storage.service';
 import { NewSaleComponent } from '../newsale/newsale.component';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,8 +13,9 @@ import { NewSaleComponent } from '../newsale/newsale.component';
 export class ProfileComponent {
 
   currentUser: string = "";
+  usrData: any;
 
-  constructor(private storageService: StorageService, public dialog: MatDialog) { }
+  constructor(private storageService: StorageService, public dialog: MatDialog, private userService: UserService) { }
 
 
   openNewSaleDialog(): void {
@@ -24,10 +26,19 @@ export class ProfileComponent {
 
   }
 
-
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
     console.log(this.currentUser);
+    this.usrData = this.userService.getUserData().subscribe({
+      next: data => {
+        this.usrData = JSON.parse(data);
+        console.log(this.usrData);
+        
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
     
   }
 
