@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Signup</h2>
+    <h2>Register a new product!</h2>
     
     <form
         *ngIf="!isSuccessful"
@@ -87,6 +87,18 @@
                     required
                     #image="ngModel"
                     [ngClass]="{ 'is-invalid': f.submitted && image.errors }">
+            </mat-form-field>
+
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Brand</mat-label>
+                <input matInput placeholder="Example brand" value="" name="brand" type="text"
+                    [(ngModel)]="form.brand"
+                    required
+                    #brand="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && brand.errors }">
             </mat-form-field>
 
         </div>

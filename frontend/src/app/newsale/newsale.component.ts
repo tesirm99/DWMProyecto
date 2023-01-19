@@ -14,7 +14,8 @@ export class NewSaleComponent {
     description: "",
     price: 0,
     image: "",
-    size: 0
+    size: 0,
+    brand: ""
   }
 
   isSuccessful = false;
@@ -25,9 +26,9 @@ export class NewSaleComponent {
   ) { }
 
   submit(): void{
-    const { name, description, price, image, size } = this.form;
+    const { name, description, price, image, size, brand } = this.form;
 
-    this.userService.newSale(name, description, price, image, size).subscribe({
+    this.userService.newSale(name, description, price, image, size, brand).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
@@ -46,6 +47,7 @@ export class NewSaleComponent {
     this.form.price = "";
     this.form.image = "";
     this.form.size = 0;
+    this.form.brand = "";
     this.dialogRef.close();
   }
 }

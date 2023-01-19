@@ -32,7 +32,7 @@ export class UserService {
     return this.http.get(API_URL + 'product/listByOwner/' + this.storageService.getUser(), { responseType: 'text' });
   }
 
-  newSale(name: string, description: string, price: number, image: string, size: number): Observable<any> {
+  newSale(name: string, description: string, price: number, image: string, size: number, brand: string): Observable<any> {
     const id = this.storageService.getUser();
 
     const body = {
@@ -41,7 +41,9 @@ export class UserService {
       description: description,
       size: size,
       image: image,
-      price: price
+      price: price,
+      brand: brand,
+      status: "available"
     }
 
     return this.http.post(API_URL + 'product/create', body, { responseType: 'text' });

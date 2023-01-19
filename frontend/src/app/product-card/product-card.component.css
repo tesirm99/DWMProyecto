@@ -1,0 +1,28 @@
+.container {
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+
+.ventaContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.ventaDataGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 0.5rem;
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+.imgContainer {
+    padding: 0.3rem;
+}

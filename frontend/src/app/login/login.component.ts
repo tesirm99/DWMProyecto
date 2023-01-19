@@ -49,8 +49,9 @@ export class LoginComponent {
         this.isLoggedIn = true;
         
         this.roles = this.storageService.getUser().roles;
-        this.dialogRef.close();
-        this.reloadPage();
+        // this.dialogRef.close();
+        // this.reloadPage();
+        this.clear();
       }
     });
     this.clear();
@@ -66,6 +67,12 @@ export class LoginComponent {
     this.form.email ="";
     this.form.password = "";
     this.show = true;
-    this.dialogRef.close();
+    //sleep 1 second
+    setTimeout(() => {
+
+      this.dialogRef.close();
+      this.reloadPage();
+    }, 1000);
+
   }
 }

@@ -37,6 +37,7 @@ import { SliderComponent } from './slider/slider.component';
 import { MatSelectModule } from '@angular/material/select';
 import { SelectComponent } from './select/select.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FooterComponent } from './footer/footer.component';
     NewSaleComponent,
     SliderComponent,
     SelectComponent,
-    FooterComponent
+    FooterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

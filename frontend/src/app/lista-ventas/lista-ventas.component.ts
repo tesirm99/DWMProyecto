@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user.service';
-
+import { ProductCardComponent } from '../product-card/product-card.component';
 @Component({
   selector: 'app-lista-ventas',
   templateUrl: './lista-ventas.component.html',

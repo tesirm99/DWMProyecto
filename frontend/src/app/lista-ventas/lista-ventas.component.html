@@ -1,31 +1,4 @@
-<p>lista-ventas works!</p>
+<p>The products you are selling</p>
 <mat-grid-list cols="1" *ngFor="let venta of sales; index as i; first as isFirst">
-        <mat-card>
-            <div class="ventaContainer">
-                <div>
-                    <mat-card>
-                        <img mat-card-image src="{{venta.image}}" width="128px" height="128px" alt="No se ha encontrado la imagen">
-                    </mat-card>
-                </div>
-                <div class="ventaDataGrid">
-                    <div class="dataContainer">
-                        <mat-label>Producto:</mat-label>
-                        <p>{{venta.name}}</p>
-                    </div>
-                    <div class="dataContainer">
-                        <mat-label>Descripción:</mat-label>
-                        <p>{{venta.description}}</p>
-                    </div>
-                    <div class="dataContainer">
-                        <mat-label>Talla:</mat-label>
-                        <p>{{venta.size}}</p>
-                    </div>
-                    <div class="dataContainer">
-                        <mat-label>Precio:</mat-label>
-                        <p>{{venta.price}}</p>
-                    </div>
-                </div>
-            </div>
-            
-        </mat-card>
+        <app-product-card [product]="venta"></app-product-card>
 </mat-grid-list>

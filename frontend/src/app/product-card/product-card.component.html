@@ -1,0 +1,32 @@
+
+<mat-card class="container">
+    <div class="productContainer">
+        <div class="imgContainer">
+            <img mat-card-image src="{{product.image}}" width="128px" height="128px" alt="No se ha encontrado la imagen">
+        </div>
+        <div class="productDataGrid">
+            <p>{{product.name}}</p>
+            <p>{{product.description}}</p>
+            <p>Size: {{product.size}}</p>
+            <p>Price: {{product.price}}</p>
+            <!--<div class="dataContainer">
+                <mat-label>Producto:</mat-label>
+                <p>{{product.name}}</p>
+            </div>
+            <div class="dataContainer">
+                <mat-label>Descripción:</mat-label>
+                <p>{{product.description}}</p>
+            </div>
+            <div class="dataContainer">
+                <mat-label>Talla:</mat-label>
+                <p>{{product.size}}</p>
+            </div>
+            <div class="dataContainer">
+                <mat-label>Precio:</mat-label>
+                <p>{{product.price}}</p>
+            </div>-->
+        </div>
+    </div>
+
+    <button (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>
+</mat-card>
