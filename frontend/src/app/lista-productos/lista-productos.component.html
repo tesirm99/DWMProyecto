@@ -1,1 +1,139 @@
-<p>lista-productos works!</p>
+<body>
+    <div class = "main-wrapper">
+        <div class = "container">
+            <div class = "main-title">
+                <h2>list of products</h2>
+            </div>
+            <div class ='sort'>
+              <button mat-button [matMenuTriggerFor]="sortByMenu" class="sort_by">
+                sort by {{sort}}
+                <mat-icon>expand_more</mat-icon>
+    
+              </button>
+              <mat-menu #sortByMenu="matMenu">
+                <button (click)="onSortUpdated('desc')" mat-menu-item>desc</button>
+                <button (click)="onSortUpdated('asc')" mat-menu-item>asc</button>
+              </mat-menu>
+            </div>
+            <div class = "item-list">
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Air Force 1 '07 LV8</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Dunk Low Retro</a>
+                        <div class = "item-price">
+                            <span class = "new-price">180 €</span>
+                            <span class = "old-price">205 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Air</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Air VaporMax</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Air Run</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Dunk Low</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Dunk H</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike air-force</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "item">
+                    <div class = "item-img">
+                        <img src = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-GjGXSP.png">
+                    </div>
+                    <div class = "item-detail">
+                        <a href = "#" class = "item-name">Nike Shoes</a>
+                        <div class = "item-price">
+                            <span class = "new-price">220 €</span>
+                            <span class = "old-price">275 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
