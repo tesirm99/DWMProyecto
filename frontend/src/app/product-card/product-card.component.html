@@ -1,35 +1,42 @@
-
-<mat-card class="container">
-    <div class="productContainer">
-        <div class="imgContainer">
-            <img mat-card-image src="{{product.image}}" width="128px" height="128px" alt="No se ha encontrado la imagen">
-        </div>
-        <div class="productDataGrid">
-            <p>{{product.name}}</p>
-            <p>{{product.description}}</p>
-            <p>Size: {{product.size}}</p>
-            <p>Price: {{product.price}}</p>
-            <!--<div class="dataContainer">
-                <mat-label>Producto:</mat-label>
-                <p>{{product.name}}</p>
-            </div>
-            <div class="dataContainer">
-                <mat-label>Descripción:</mat-label>
-                <p>{{product.description}}</p>
-            </div>
-            <div class="dataContainer">
-                <mat-label>Talla:</mat-label>
-                <p>{{product.size}}</p>
-            </div>
-            <div class="dataContainer">
-                <mat-label>Precio:</mat-label>
-                <p>{{product.price}}</p>
-            </div>-->
-        </div>
-    </div>
-    <div>
-        <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
-        <button (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>
-    </div>
+<div class="product-card-cart-container">
+  
+    <div class="container">
     
-</mat-card>
+      <div class="product-card-cart-container-inner mt-4 pt-4">
+      
+        <div class="product-card-cart">
+            
+            <a href="#" class="product-card-cart-link">
+              <img src="{{product.image}}" alt="">
+            </a>
+          
+            <div class="list-group list-group-flush product-card-cart-content">
+              
+              <div class="product-card-cart-content-name-price list-group-item">
+                <div class="product-card-cart-content-name">{{product.name}}</div>
+                <span class="product-price">
+                    <b>{{product.price}}€</b>
+                </span>  
+            </div>
+
+            <div class="product-card-cart-content-description">{{product.description}}</div>
+          
+              <div class="product-card-cart-content-size list-group-item">
+                <div>Size: </div>
+                <span class="badge bg-secondary">{{product.size}}</span>
+              </div>
+              <div class="product-card-cart-content-remove list-group-item">
+                <div id="price">
+                    <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
+                    <button (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>   
+                </div>
+              </div>
+            </div>
+          
+         </div>
+        
+      </div>
+    
+    </div>
+      
+  </div>
