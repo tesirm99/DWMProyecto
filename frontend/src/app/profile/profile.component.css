@@ -5,3 +5,80 @@
     margin: 20px;
     
 }
+.body{
+    background-color: rgb(0 0 0 / 2%);
+}
+
+.greeting{
+    width: auto;
+    list-style: none;
+    height: 100px;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -.4px;
+    line-height: 3rem;
+    font-weight: 800;
+    display:flex;
+    justify-content: center;
+}
+.greeting_txt{
+    margin-top: 20px;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navProfile{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+.optionsProfile ul {
+	border: 1px solid #ebebeb;
+	padding-left: 20px;
+	padding-bottom: 12px;
+}
+
+.optionsProfile ul li {
+	list-style: none;
+}
+
+.optionsProfile ul li a {
+	font-size: 16px;
+	color: #1c1c1c;
+	line-height: 39px;
+	display: block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.lista_compras{
+    border-radius: 0.2cm;
+}
+
+.lista_ventas{
+    border-radius: 0.2cm;
+}
+#button_sell{
+    background-color: rgb(0 0 0 / 5%);
+    max-width: auto;
+    width: 100%;
+    height: 45px;
+	font-size: 16px;
+	color: #1c1c1c;
+    font-weight: 500;
+    border: 1px solid #ebebeb;
+    border-radius: 0.2cm;
+    margin-bottom: 10px;
+
+}
+.product{
+    margin-top: 30px;
+}
