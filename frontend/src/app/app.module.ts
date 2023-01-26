@@ -86,4 +86,4 @@ import { ProductPageComponent } from './product-page/product-page.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
