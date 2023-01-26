@@ -18,25 +18,23 @@
                     <b>{{product.price}}€</b>
                 </span>  
             </div>
-
-            <div class="product-card-cart-content-description">{{product.description}}</div>
-          
-              <div class="product-card-cart-content-size list-group-item">
-                <div>Size: </div>
-                <span class="badge bg-secondary">{{product.size}}</span>
-              </div>
-              <div class="product-card-cart-content-remove list-group-item">
-                <div id="price">
-                    <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
-                    <button (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>   
-                </div>
-              </div>
+            <div class="dataContainer">
+                <mat-label>Descripción:</mat-label>
+                <p>{{product.description}}</p>
             </div>
-          
-         </div>
-        
-      </div>
-    
+            <div class="dataContainer">
+                <mat-label>Talla:</mat-label>
+                <p>{{product.size}}</p>
+            </div>
+            <div class="dataContainer">
+                <mat-label>Precio:</mat-label>
+                <p>{{product.price}}</p>
+            </div>-->
+        </div>
     </div>
-      
-  </div>
+    <div>
+        <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
+        <button (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>
+    </div>
+    
+</mat-card>
