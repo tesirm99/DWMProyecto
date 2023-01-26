@@ -116,7 +116,7 @@ text-transform: uppercase;
   font-size:2.8vh;
   font-family:Arial;
   font-weight:Regular;
-  background-color:#345e82;
+  background-color:#4f5fb9;
   border:none;
   outline:none;
   color:white;
@@ -127,7 +127,7 @@ text-transform: uppercase;
 .product-price {
   right:  17px;
   top: 20px;
-  background: #11e95b;
+  background: #83e3a4;
   padding: 7px 20px;
   text-align: center;
   display: inline-block;

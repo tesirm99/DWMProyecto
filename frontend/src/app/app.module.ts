@@ -39,7 +39,6 @@ import { SelectComponent } from './select/select.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductPageComponent } from './product-page/product-page.component';
-
 @NgModule({
   declarations: [
     AppComponent,
