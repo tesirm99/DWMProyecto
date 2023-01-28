@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { ProductService } from '../services/product.service';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductCardCartComponent } from '../product-card-cart/product-card-cart.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -27,5 +28,6 @@ export class ShoppingCartComponent {
       }
     });
   }
+  
   
 }
