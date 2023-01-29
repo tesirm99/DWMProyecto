@@ -39,6 +39,8 @@ import { SelectComponent } from './select/select.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductCardCartComponent } from './product-card-cart/product-card-cart.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,9 @@ import { ProductPageComponent } from './product-page/product-page.component';
     SelectComponent,
     FooterComponent,
     ProductCardComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ProductCardCartComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
