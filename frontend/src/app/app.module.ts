@@ -42,6 +42,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductCardCartComponent } from './product-card-cart/product-card-cart.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,9 +62,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     FooterComponent,
     ProductCardComponent,
     ProductPageComponent,
-    ContactComponent
+    ContactComponent,
     ProductCardCartComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
