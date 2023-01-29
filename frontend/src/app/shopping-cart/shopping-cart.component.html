@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 <head>
 	<title>Shopping Cart UI</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
@@ -10,18 +9,19 @@
    	   	<h3 class="Heading">Cesta</h3>
    	   	<h5 class="Action">Eliminar todo</h5>
    	   </div>
-
+		<mat-grid-list cols="1" *ngFor="let venta of sales; index as i; first as isFirst">
+			<app-product-card-cart [product]="venta"></app-product-card-cart>
+		</mat-grid-list>
       
-   	 <hr> 
-   	 <div class="checkout">
-   	 <div class="total">
-   	 	<div>
-   	 		<div class="Subtotal">Sub-Total</div>
-   	 		<div class="items">2 items</div>
-   	 	</div>
-   	 	<div class="total-amount">6.18€</div>
-   	 </div>
-   	 <button class="button">Checkout</button></div>
+		<hr> 
+		<div class="checkout">
+		<div class="total">
+			<div>
+				<div class="Subtotal">Sub-Total</div>
+				<div class="items">2 artículos</div>
+			</div>
+			<div class="total-amount">6.18€</div>
+		</div>
+		<button class="button">Confirmar pago</button></div>
    </div>
 </body>
-</html>
