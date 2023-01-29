@@ -1,14 +1,14 @@
 
-.head{
+.head_title{
     background-image: url("https://th.bing.com/th/id/R.a3d417b04908132e6a8339076746cdac?rik=Yt20ypRK5aRuZw&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f82%2f77%2fuYsL97.png&ehk=dSYMDIr1TXVnEeNs14T9Va%2bGxcRweT3MqvY%2fKdj2DJ4%3d&risl=&pid=ImgRaw&r=0");
     width: auto;
     list-style: none;
     opacity: 70%;
-    min-height: 100vh;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: poppins,sans-serif;
+    font-family: sans-serif;
     background-size: cover;
     background-position: center center;
     padding: 15px;
@@ -26,23 +26,23 @@ fieldset {
     border: 0;
 }
 
-.head form legend {
+.head_title form legend {
     font-size: 30px;
     color: #fff;
     font-weight: 800;
     text-align: center;
     margin-bottom: 59px;
 }
-.head form .inner-form {
+.head_title form .inner-form {
     width: 75%;
     margin-bottom: 17px;
 }
 
-.head form .inner-form .input-field {
+.head_title form .inner-form .input-field {
     margin-bottom: 20px;
     height: 30px;
 }
-.head form .inner-form .input-field input {
+.head_title form .inner-form .input-field input {
     height: 50%;
     border: 0;
     background: #fff;
@@ -54,13 +54,13 @@ fieldset {
     width: 100%;
 }
 
-.head form .inner-form .input-field {
+.head_title form .inner-form .input-field {
     height: 70px;
     width: 100%;
     position: relative;
 }
 
-.head form .inner-form .input-field .btn-search {
+.head_title form .inner-form .input-field .btn-search {
     width: 70px;
     position: absolute;
     left: 0;
@@ -106,7 +106,7 @@ fieldset {
 	padding-bottom: 12px;
 }
 
-.filter__categories ul li {
+.filter__categories ul li { 
 	list-style: none;
 }
 

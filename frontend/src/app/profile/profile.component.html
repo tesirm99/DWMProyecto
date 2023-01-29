@@ -8,22 +8,24 @@
             <ul class="links">
                 <li><a href="#profile">Edit Profile</a></li>
                 <li><a href="#address">Addresses</a></li>
-                <li><a href="#contact">Help and Contact</a></li>
+                <li><a [routerLink]="'/contact'"> Contact </a></li>                
                 <li><a href="#delete">Delete Data</a></li>
                 </ul>
-                
         </div>
 
         <div class="profileContainer">
             <div class="lista_compras">
-                <app-lista-compras></app-lista-compras>
+                <h2 class="name_list_purchase">Your purchases</h2>
+                 <app-lista-compras></app-lista-compras>
             </div>
             <div class="lista_ventas">
-                <button id="button_sell"(click)="openNewSaleDialog()"> Vender producto </button>
+                <div class="name">
+                    <h2 class="name_list">Your sales</h2>
+                <button id="button_sell"(click)="openNewSaleDialog()">Let's sell a sneaker</button>
+                </div>
                     <app-lista-ventas></app-lista-ventas>
             </div>
         </div>
-       
+        <app-footer></app-footer>
 </body>
     
-<app-footer></app-footer>

@@ -39,6 +39,7 @@ import { SelectComponent } from './select/select.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ContactComponent } from './contact/contact.component';
 import { ProductCardCartComponent } from './product-card-cart/product-card-cart.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 @NgModule({
@@ -60,6 +61,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     FooterComponent,
     ProductCardComponent,
     ProductPageComponent,
+    ContactComponent
     ProductCardCartComponent,
     ShoppingCartComponent
   ],
@@ -90,4 +92,4 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
