@@ -39,6 +39,7 @@ import { SelectComponent } from './select/select.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ContactComponent } from './contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
     SelectComponent,
     FooterComponent,
     ProductCardComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
