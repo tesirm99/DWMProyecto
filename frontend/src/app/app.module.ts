@@ -45,6 +45,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AboutComponent } from './about/about.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ProductMinCardComponent } from './product-min-card/product-min-card.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { ProductMinCardComponent } from './product-min-card/product-min-card.com
     ShoppingCartComponent,
     AboutComponent,
     DeleteComponent,
-    ProductMinCardComponent
+    ProductMinCardComponent,
   ],
   imports: [
     BrowserModule,

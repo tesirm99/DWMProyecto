@@ -21,10 +21,11 @@ export class ProfileComponent {
   openNewSaleDialog(): void {
     this.dialog.open(NewSaleComponent, {
       width: '350px',
-      height: '550px'
+      height: '600px'
     });
 
   }
+
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
