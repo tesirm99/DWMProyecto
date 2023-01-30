@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-carrusel',
@@ -7,8 +8,10 @@ import { ProductService } from '../services/product.service';
 })
 export class CarruselComponent{
 
+  @Input() product: any;
+
   slideConfig = {
-    slidesToShow: 2,
+    slidesToShow: 4,
     slidesToScroll: 1,
     dots: true, 
     infinite: true, 
@@ -18,7 +21,7 @@ export class CarruselComponent{
   loading = true;
   carProds: any = [];
  
-  constructor(private prodService: ProductService){
+  constructor(private prodService: ProductService, private router: Router){
   }
 
   ngOnInit(){
@@ -36,4 +39,11 @@ export class CarruselComponent{
     );
 
   }
+
+  viewProd(): void {
+    console.log(this.product);
+    this.router.navigate(['/product', this.product._id]);
+  }
 }
+
+

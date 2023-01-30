@@ -28,4 +28,8 @@ export class ProductMinCardComponent {
     this.router.navigate(['/product', this.product._id]);
   }
 
+  addToCart(): void {
+    this.prodService.addToCart(this.product);
+  }
+
 }

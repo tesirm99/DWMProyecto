@@ -1,8 +1,8 @@
 <div class="slick-wrapper">
-  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
     
-    <div ngxSlickItem *ngFor="let prod of carProds" class="slide">
-      <a  class="link"><img width="auto" height="250px" [src]="prod?.image" alt="Image not found"></a>
+    <div ngxSlickItem *ngFor="let prod of carProds" class="slide" >
+      <a  class="link"><img width="auto" height="250px" [src]="prod?.image"  alt="Image not found" ></a>
     </div>
     
   </ngx-slick-carousel>
