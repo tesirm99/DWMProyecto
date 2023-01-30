@@ -1,0 +1,196 @@
+.delete{
+    text-align: center;
+    color: #3f51b5;
+    background-color: white;
+    border-color: #3f51b5;
+    width: 840px;
+    height: 400px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.delete_text{
+    padding-top: 20px;
+    width: 530px;
+    text-align: center;
+    margin-left: 18%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+    height: 100vh;
+    width: 100%;
+
+}
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font-size: 80px;
+    color: #3f51b5;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+
+
+  
+
+  /* CSS */
+  .button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #3f51b5;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3f51b5;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 20%;
+    will-change: transform;
+  }
+  
+  .button-28:disabled {
+    pointer-events: none;
+  }
+  
+  .button-28:hover {
+    color: #fff;
+    background-color: #3f51b5;
+    box-shadow: #3f51b567;
+    transform: translateY(-2px);
+  }
+  
+  .button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  @media (min-width: 768px) {
+    .button-51 {
+      padding: 16px 32px;
+    }
+  }
+  /* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10%;
+    }
+    .direct-contact-container, .form-horizontal {
+      margin: 0 auto;
+    }  
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 300px;
+    }    
+    .social-media-list li {
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+    }
+    .social-media-list li:after {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+    
+  }
+  @media screen and (max-width: 780px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+      }
+    .delete{
+        width: 500px;
+        height: 400px;
+        margin-left: 10%;
+    }
+    .delete_text{
+        padding-top: 20px;
+        width: 350px;
+        text-align: center;
+        margin-left: 18%;
+    }
+  
+  .section-header{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+}
+@media screen and (max-width: 583px) {
+  
+    
+    .delete{
+        width: 400px;
+        height: 350px;
+        margin-left: 13%;
+    }
+    .delete_text{
+        padding-top: 20px;
+        width: 350px;
+        text-align: center;
+        margin-left: 9%;
+    }
+    .section-header{
+        font-size: 55px;
+        margin-bottom: 10px;
+    }
+}
+  
+  @media screen and (max-width: 569px) {
+  
+    
+    .delete{
+        width: 400px;
+        height: 350px;
+        margin-left: 10%;
+    }
+    .delete_text{
+        padding-top: 20px;
+        width: 350px;
+        text-align: center;
+        margin-left: 9%;
+    }
+  
+    .section-header{
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .contact-wrapper {
+        margin-left: 50px;
+      }
+    
+    .name, .email, textarea {
+      width: 280px;
+    } 
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 280px;
+    }  
+   
+    
+  }
+  
