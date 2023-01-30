@@ -18,7 +18,7 @@
 
             <mat-grid-list class="gridListContainer" cols="3">
                 <mat-grid-tile *ngFor="let prod of productList; index as i; first as isFirst">
-                    <app-product-card [product]="prod" [parent]="'listaProductos'"></app-product-card>
+                    <app-product-min-card [product]="prod" [parent]="'listaProductos'"></app-product-min-card>
                 </mat-grid-tile>
             </mat-grid-list>
 
