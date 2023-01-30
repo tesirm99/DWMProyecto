@@ -7,9 +7,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   productList: any;
-
   searchPrompt: string = '';
 
   constructor(private productService: ProductService) { }
@@ -25,15 +23,28 @@ export class HomeComponent implements OnInit {
 
   search(searchTerm: string) {
     console.log(searchTerm);
-    this.productService.getProductsByName(searchTerm).subscribe({
-      next: data => {
-        console.log('search: ', data);
-        this.productList = data;
-      },
-      error: err => {
-        console.log(err);
-      }
-    });
+    if(searchTerm.length == 0) {
+      this.productService.getFeaturedProducts().subscribe({
+        next: data => {
+          console.log('search: ', data);
+          this.productList = data;
+        },
+        error: err => {
+          console.log(err);
+        }
+      });
+    } else {
+      this.productService.getProductsByName(searchTerm).subscribe({
+        next: data => {
+          console.log('search: ', data);
+          this.productList = data;
+        },
+        error: err => {
+          console.log(err);
+        }
+      });
+    }
+    
   }
 
   filterByBrand(brand: string){

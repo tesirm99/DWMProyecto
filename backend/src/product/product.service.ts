@@ -73,7 +73,7 @@ export class ProductService {
   async findOneByName(name: string): Promise<Product[]> {
     console.log(name);
     const regex = new RegExp(name, 'i');
-    const q = await this.productModel.find({name: { $regex: regex }}).exec();
+    const q = await this.productModel.find({name: { $regex: regex }, status: 'available'}).exec();
     console.log('Found product by name', q);
     return q;
   }
