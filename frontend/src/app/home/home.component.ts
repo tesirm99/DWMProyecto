@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     console.log(searchTerm);
     this.productService.getProductsByName(searchTerm).subscribe({
       next: data => {
-        console.log(data);
+        console.log('search: ', data);
         this.productList = data;
       },
       error: err => {

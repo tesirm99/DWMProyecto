@@ -70,12 +70,12 @@ export class ProductService {
     return q;
   }
 
-  async findOneByName(name: string): Promise<Product> {
+  async findOneByName(name: string): Promise<Product[]> {
     console.log(name);
     const regex = new RegExp(name, 'i');
     const q = await this.productModel.find({name: { $regex: regex }}).exec();
     console.log('Found product by name', q);
-    return q[0];
+    return q;
   }
 
   async findOneByDescription(description: string): Promise<Product> {
