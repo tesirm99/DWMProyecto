@@ -1,26 +1,33 @@
-<div class="wrapper">
-    <div class="prodPage">
-        <div class="container">
-            <div class="titleCont">
-                <h1 class="title">{{prodData.name}}</h1>
-                <h3 class="subtitle">{{prodData.description}}</h3>
+
+        <main class="container">
+ 
+            <!-- Left Column / Headphones Image -->
+            <div class="left-column">
+                <img  id="image_product"src="{{prodData.image}}" width="512px" height="348px" alt="No se ha encontrado la imagen">        
             </div>
-            <div class="prodCont">
-                <div class="imgCont">
-                    <img src="{{prodData.image}}" width="512px" height="348px" alt="No se ha encontrado la imagen">        
+           
+           
+            <!-- Right Column -->
+            <div class="right-column">
+           
+              <!-- Product Description -->
+              <div class="product-description">
+                <span class="name_product">{{prodData.name}}</span>
+                <p class="dataLabel">{{prodData.description}}</p>
+                <p><span class="names">Size:</span> {{prodData.size}}</p>
+                <p><span class="names">Status:</span> {{prodData.status}}</p>
+              </div>
+           
+           
+              <!-- Product Pricing -->
+              <div class="product-price">
+                <span>{{prodData.price}}€</span>
+                <div>
+                    <button class="cart-btn" (click)="addToCart()">Add to cart</button>
                 </div>
-                <div class="dataCont">
-                    <h4><span class="dataLabel">Brand:</span> {{prodData.brand}}</h4>
-                    <p><span class="dataLabel">Size:</span> {{prodData.size}}</p>
-                    <p><span class="dataLabel">Price:</span> {{prodData.price}}</p>
-                    <p><span class="dataLabel">Status:</span> {{prodData.status}}</p>
-                    <div>
-                        <button (click)="addToCart()">Add to cart</button>
-                    </div>
-                    
-                </div>
+              </div>
             </div>
-        </div>
+          </main>
     
         <div class="featuredList">
              <h2>Related products</h2>
@@ -30,5 +37,3 @@
                 </mat-grid-list>
              </div>
         </div>
-    </div>
-</div>
