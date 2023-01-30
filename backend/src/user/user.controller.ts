@@ -14,4 +14,6 @@ export class UserController {
     return await this.userService.getUserData(params.id);
   }
 
+  
+
 }

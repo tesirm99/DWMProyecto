@@ -23,7 +23,8 @@ export class UserService {
 
   //Get user purchases // Esta no funciona
   getUserPurchases(): Observable<any> {
-    return this.http.get(API_URL + 'user/purchases', { responseType: 'text', params: { id: this.storageService.getUser() } });
+    
+    return this.http.get(API_URL + 'product/purchases/' + this.storageService.getUser(), { responseType: 'text' });
   }
 
   //Get user sales // Esta funciona

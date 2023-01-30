@@ -41,11 +41,11 @@ export class TransactionService {
 
     async getTransactionListByBuyer(buyerId: string) {
             
-            const q = await this.transactionModel.find({buyer: buyerId}).exec();
-    
-            console.log('Get Transaction List from ' + buyerId + ': ', q);
-    
-            return q;
+        const q = await this.transactionModel.find({buyer: buyerId}).exec();
+
+        console.log('Get Transaction List from ' + buyerId + ': ', q);
+
+        return q;
     }
 
     async getAllTransactionList() {

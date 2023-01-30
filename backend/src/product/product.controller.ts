@@ -69,5 +69,11 @@ export class ProductController {
         return await this.productService.findOneBySize(size);
     }
 
+    @Get('/purchases/:id')
+    async getUserPurchases(@Param() params) {
+        console.log(params.id);
+        
+        return await this.productService.getUserPurchases(params.id);
+    }
 
 }

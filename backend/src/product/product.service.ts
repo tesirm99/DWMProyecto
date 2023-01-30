@@ -56,20 +56,18 @@ export class ProductService {
 
   async getProductList(ownerId: string) {
       
-      const q = await this.productModel.find({owner: ownerId}).exec();
+    const q = await this.productModel.find({owner: ownerId}).exec();
 
-      console.log('Get Product List from ' + ownerId + ': ', q);
-      
-
-      return q;
+    console.log('Get Product List from ' + ownerId + ': ', q);
+    return q;
   }
 
   async getAllProductList() {
-      const q = await this.productModel.find().exec();
-      
-      console.log('Get All Product List: ', q);
+    const q = await this.productModel.find().exec();
+    
+    console.log('Get All Product List: ', q);
 
-      return q;
+    return q;
   }
 
   async findOneByName(name: string): Promise<Product> {
@@ -114,6 +112,26 @@ export class ProductService {
     const q = await this.productModel.find().exec();
     console.log('Get Featured Product List: ', q);
     return q.slice(0, 12);
+  }
+
+  //Hay que buscar las transacciones donde el usuario sea el comprador y traer los productos asociados a esas transacciones
+  async getUserPurchases(id: any) {
+    console.log('Get User Purchases from user ', id);
+    
+    const qtr = await this.transactionModel.find({buyer: id}).exec();
+    console.log('Found transactions', qtr);
+
+    let purchaseList = [];
+    for (let i = 0; i < qtr.length; i++) {
+      const qp = await this.productModel.find({_id: qtr[i].product}).exec();
+      console.log('Found product', qp);
+      purchaseList.push(qp[0]);
+    }
+
+    console.log('Purchase List: ', purchaseList);
+    
+    return purchaseList;
+
   }
 
 
