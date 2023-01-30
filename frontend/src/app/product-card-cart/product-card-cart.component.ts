@@ -21,14 +21,10 @@ export class ProductCardCartComponent {
     this.router.navigate(['/product', this.product._id]);
   }
 
-  deleteProd(): void {
+  removeItem(): void {
     console.log(this.product);
-    this.prodService.deleteProduct(this.product._id).subscribe({
-      next: data => {
-        console.log(data);
-        window.location.reload();
-      }
-    });
+    this.prodService.deleteFromCart(this.product._id);
+    window.location.reload();
   }
 
 }

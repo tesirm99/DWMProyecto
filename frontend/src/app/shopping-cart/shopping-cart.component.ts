@@ -15,19 +15,38 @@ export class ShoppingCartComponent {
 
   constructor(private userService: UserService, private prodService: ProductService) { }
 
-  sales: any;
+  cart: any = [];
 
   ngOnInit(): void {
-    this.userService.getUserSales().subscribe({
-      next: data => {
-        this.sales = JSON.parse(data);
-        console.log(this.sales);
-      },
-      error: err => {
-        console.log(err);
-      }
+    this.cart = this.prodService.getCart();
+    console.log('cart', this.cart);
+    
+
+  }
+
+  emptyCart() {
+    this.prodService.emptyCart().subscribe((data: any) => {
+      this.cart = data;
+      console.log('cart', this.cart);
     });
   }
+
+  getNumberOfItems() {
+    return this.cart.length;
+  }
   
-  
+  getAmoutToPay() {
+    let total = 0;
+    this.cart.forEach((item: any) => {
+      total += item.price;
+    });
+    return total;
+  }
+
+  confirmPayment() {
+    this.prodService.confirmPayment(this.cart).subscribe((data: any) => {
+      this.cart = data;
+      console.log('cart', this.cart);
+    });
+  }  
 }

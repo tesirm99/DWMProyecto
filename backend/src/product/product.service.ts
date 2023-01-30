@@ -134,5 +134,27 @@ export class ProductService {
 
   }
 
+  //Recorrer carrito, crear una transaccion por cada producto y cambiar el estado del producto a vendido
+  async confirmPayment(data: any) {
+    console.log('Confirm Payment: ', data);
+    let cart = data.products;
+    let buyer = data.buyer;
+    cart.forEach(async (prod) => {
+
+      const q = await this.transactionModel.create({
+        buyer: buyer,
+        seller: prod.owner,
+        product: prod._id,
+        status: 'sold'
+      });
+
+      console.log('Created transaction: ', q);
+
+      const q2 = await this.productModel.updateOne({_id: prod._id}, {status: 'sold'}).exec();
+      console.log('Updated product: ', q2);
+
+    });
+    
+  }
 
 }

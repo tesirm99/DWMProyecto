@@ -76,4 +76,9 @@ export class ProductController {
         return await this.productService.getUserPurchases(params.id);
     }
 
+    @Post('confirmPayment')
+    async confirmPayment(@Request() req) {
+        return await this.productService.confirmPayment(req.body);
+    }
+
 }

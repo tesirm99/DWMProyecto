@@ -38,4 +38,9 @@ export class ProductPageComponent {
     
   }
 
+  addToCart(): void {
+    this.prodService.addToCart(this.prodData);
+  }
+  
+
 }
