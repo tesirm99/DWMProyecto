@@ -11,6 +11,7 @@ export class ProductCardComponent {
   @Input() product: any;
   @Input() parent: string = '';
 
+  class: string = 'card';
   show: boolean = true;
   constructor(private prodService: ProductService, private router: Router) { 
     
@@ -24,9 +25,10 @@ export class ProductCardComponent {
       this.show = true;
     } else {
       this.show = false;
+      this.class = 'lista-productos-card';
     }
 
-    if(this.product.status == 'available'){
+    if(this.product.status == 'available' && this.parent != 'listaProductos'){
       this.show = true;
     } else {
       this.show = false;

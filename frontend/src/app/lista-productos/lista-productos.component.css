@@ -117,3 +117,8 @@ img{
         grid-template-columns: repeat(3, 3fr);
     }
 }**/
+
+
+.gridListContainer{
+    width: 100%;
+}
