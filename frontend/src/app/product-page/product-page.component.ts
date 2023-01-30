@@ -11,6 +11,8 @@ export class ProductPageComponent {
   @Input() id: any;
   prodData: any;
 
+  relatedProducts: any = [];
+
 
   constructor(private router: Router, private actRoute: ActivatedRoute, private prodService: ProductService) { }
 
@@ -22,8 +24,15 @@ export class ProductPageComponent {
     
     this.prodService.getProductData(this.id).subscribe({
       next: data => {
-        console.log(data);
+        console.log('Product data: ', data);
         this.prodData = data;
+      }
+    });
+
+    this.relatedProducts = this.prodService.getFeaturedProducts().subscribe({
+      next: data => {
+        console.log(data);
+        this.relatedProducts = data;
       }
     });
     

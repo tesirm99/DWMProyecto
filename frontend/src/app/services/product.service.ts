@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   getProductData(_id: string) {
-    return this.httpClient.get(API_URL + 'data/' + _id);
+    return this.httpClient.get(API_URL + 'dataById/' + _id);
   }
 
   deleteProduct(_id: string) {
