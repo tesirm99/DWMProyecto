@@ -1,11 +1,28 @@
-<p>This is {{usrData.username}}'s profile</p>
+<body>
+    <div class="greeting">
+        <p class="greeting_txt">What's up today, {{usrData.username}}?</p>
+    </div>
 
-<div class="profileContainer">
-    <div>
-        <app-lista-compras></app-lista-compras>
-    </div>
-    <div>
-        <button mat-button (click)="openNewSaleDialog()"> Vender producto </button>
-        <app-lista-ventas></app-lista-ventas>
-    </div>
-</div>
+
+        <div class="optionsProfile">
+            <ul class="links">
+                <li><a href="#profile">Edit Profile</a></li>              
+                <li><a [routerLink]="'/delete'">Delete Profile</a></li>
+                </ul>
+        </div>
+
+        <div class="profileContainer">
+            <div class="lista_compras">
+                <h2 class="name_list_purchase">Your purchases</h2>
+                 <app-lista-compras></app-lista-compras>
+            </div>
+            <div class="lista_ventas">
+                <div class="name">
+                    <h2 class="name_list">Your sales</h2>
+                <button id="button_sell"(click)="openNewSaleDialog()">Let's sell a sneaker</button>
+                </div>
+                    <app-lista-ventas></app-lista-ventas>
+            </div>
+        </div>
+</body>
+    

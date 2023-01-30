@@ -6,10 +6,12 @@ import { CreateUserDto } from './create-user.dto';
 
 @Injectable()
 export class UserService {
+      
 
       constructor(
         @InjectConnection() private connection: Connection,
-        @InjectModel(User.name) private userModel: Model<UserDocument>) {
+        @InjectModel(User.name) private userModel: Model<UserDocument>
+        ) {
           //connection.
         }
     
@@ -66,6 +68,6 @@ export class UserService {
         return await this.findOneById(id);
       }
 
-
+  
 
 }

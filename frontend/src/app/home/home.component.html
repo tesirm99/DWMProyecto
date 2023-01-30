@@ -1,22 +1,23 @@
 <head>
     <title>DWM-Sneaker Shop</title>
 </head>
-
-<body>
-    <div class="head">
+    <div class="head_title">
         <form>
             <fieldset>
                 <legend>Which Sneaker are you looking for?</legend>
                 <div class="inner-form">
                     <div class="input-field">
-                        <button class="btn-search" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                                </path>
-                            </svg>
-                        </button>
-                        <input id="search" type="text" placeholder="Buy shoes" value="">
+                        <form ng-submit="search(searchPrompt)">
+                            <button class="btn-search" type="button" (click)="search(searchInput.value)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <input id="search" type="text" placeholder="Buy shoes" value="" #searchInput (keydown.enter)="search(searchInput.value)">
+                        </form>
+                        
                     </div>
                 </div>
             </fieldset>
@@ -36,22 +37,22 @@
             <div class="filter__categories">
                 <h2 class="text_filters">BRANDS</h2>
                 <ul>
-                    <li><a href="#">YEEZY</a></li>
-                    <li><a href="#">REEBOK</a></li>
-                    <li><a href="#">CONVERSE</a></li>
-                    <li><a href="#">VANS</a></li>
-                    <li><a href="#">SAUCONY</a></li>
-                    <li><a href="#">DIADORA</a></li>
-                    <li><a href="#">ADIDAS</a></li>
-                    <li><a href="#">AIR JORDAN</a></li>
-                    <li><a href="#">NIKE</a></li>
-                    <li><a href="#">NEW BALANCE</a></li>
+                    <li><a href="#" (click)="filterByBrand('yeezy')">YEEZY</a></li>
+                    <li><a href="#" (click)="filterByBrand('reebok')">REEBOK</a></li>
+                    <li><a href="#" (click)="filterByBrand('converse')">CONVERSE</a></li>
+                    <li><a href="#" (click)="filterByBrand('vans')">VANS</a></li>
+                    <li><a href="#" (click)="filterByBrand('saucony')">SAUCONY</a></li>
+                    <li><a href="#" (click)="filterByBrand('diadora')">DIADORA</a></li>
+                    <li><a href="#" (click)="filterByBrand('adidas')">ADIDAS</a></li>
+                    <li><a href="#" (click)="filterByBrand('air jordan')">AIR JORDAN</a></li>
+                    <li><a href="#" (click)="filterByBrand('nike')">NIKE</a></li>
+                    <li><a href="#" (click)="filterByBrand('new balance')">NEW BALANCE</a></li>
                 </ul>
                 <div class="filter__categories__price">
                     <h2 class="text_filters">PRICES</h2>
                     <div class="slider_range">
                         <app-slider></app-slider>
-                    </div>
+                    </div> 
                 </div>
                 <div class="filter__categories__size">
                     <h2 class="text_filters">SIZES</h2>
@@ -61,9 +62,7 @@
                 </div>
             </div>
             <div class="list_products">
-                <app-lista-productos></app-lista-productos>
+                <app-lista-productos [productList]="productList"></app-lista-productos>
             </div>
         </div>
     </div>
-    <app-footer></app-footer>
-</body>

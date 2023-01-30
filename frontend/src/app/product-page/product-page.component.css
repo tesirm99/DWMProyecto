@@ -1,0 +1,52 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+.titleCont {
+
+}
+
+.prodCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.imgCont {
+
+}
+
+.dataCont {
+    display: grid;
+    grid-template-rows: 1rem 1rem 1rem 1rem 1rem;
+    gap: 1rem;
+}
+
+.prodPage {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.warapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color:darkgrey
+}
+
+.dataLabel {
+    font-size: 1rem;
+    font-weight: bold;
+}

@@ -1,0 +1,255 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+    height: 100vh;
+    width: 100%;
+
+}
+#contact {
+    width: 100%;
+    height: 100%;
+  }
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font-size: 100px;
+    color: #3f51b5;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+  
+  .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    max-width: 850px;
+    margin-left: 16%;
+  }
+  
+  /* Left contact page */
+  
+  .shop{
+
+    margin-right: 50px;
+  }
+  .shop img{
+    width: 500px;
+    height: 400px;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+.about_text{
+  color:rgb(125, 125, 125);
+}
+  
+  
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    max-width: 400px;
+  }
+  
+  /* Location, Phone, Email Section */
+  .contact-list {
+    list-style-type: none;
+    margin-left: -50px;
+  }
+  
+  .list-item {
+    color: rgb(125, 125, 125);
+  }
+  
+  .contact-text {
+    font: 300 18px 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: #bbb;
+  }
+  
+  .place {
+    margin-left: 62px;
+  }
+  
+  .phone {
+    margin-left: 56px;
+  }
+  
+  .gmail {
+    margin-left: 53px;
+  }
+  
+  .contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+  }
+  
+  .contact-text a:hover {
+    color: #3f51b5;
+    text-decoration: none;
+  }
+  
+  
+  /* Social Media Icons */
+  .social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .social-media-list li a {
+    color: #fff;
+  }
+  
+  .social-media-list li {
+    position: relative; 
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #3f51b5;
+    cursor: pointer; 
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+  }
+  
+  .social-media-list li:hover {
+    background-color: #fff; 
+  }
+  
+  .social-media-list li:hover:after {
+    opacity: 1;  
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+  }
+  
+  .social-media-list li:hover a {
+    color: #3f51b5b2;
+  }
+
+  
+  hr {
+    border-color: rgba(255,255,255,.6);
+  }
+ /* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10%;
+    }
+    .direct-contact-container, .form-horizontal {
+      margin: 0 auto;
+    }  
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 300px;
+    }    
+    .social-media-list li {
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+    }
+    .social-media-list li:after {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+    
+  }
+  @media screen and (max-width: 780px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+      }
+    .shop img{
+        width: 400px;
+        height: 350px;
+        margin-left: 10%;
+    }
+  
+  .section-header{
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+  .direct-contact-container{
+    margin-left: 15px;
+    margin-top: 40px;
+    margin-left: 15%;
+  }
+}
+  
+  @media screen and (max-width: 569px) {
+  
+    .direct-contact-container, .form-wrapper {
+      float: none;
+      margin: 0 auto;
+    }  
+    .section-header{
+        font-size: 70px;
+        margin-bottom: 10px;
+    }
+    .contact-wrapper {
+        margin-left: 50px;
+      }
+   .shop img{
+    margin-left: 60px;
+    width: 350px;
+    height: 300px;
+    margin-bottom: 0;
+   }
+
+    
+    .direct-contact-container {
+      margin-top: 60px;
+      max-width: 280px;
+    }  
+    .social-media-list {
+      left: 0;
+    }
+    .social-media-list li {
+      height: 55px;
+      width: 55px;
+      line-height: 55px;
+      font-size: 2rem;
+    }
+    .social-media-list li:after {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 410px) {
+    .send-button {
+      width: 99%;
+    }
+  }

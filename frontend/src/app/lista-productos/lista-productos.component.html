@@ -2,9 +2,9 @@
     <div class = "main-wrapper">
         <div class = "container">
             <div class = "main-title">
-                <h2>list of products</h2>
+                <h2>Featured products</h2>
             </div>
-            <div class ='sort'>
+            <!--<div class ='sort'>
               <button mat-button [matMenuTriggerFor]="sortByMenu" class="sort_by">
                 sort by {{sort}}
                 <mat-icon>expand_more</mat-icon>
@@ -14,7 +14,15 @@
                 <button (click)="onSortUpdated('desc')" mat-menu-item>desc</button>
                 <button (click)="onSortUpdated('asc')" mat-menu-item>asc</button>
               </mat-menu>
-            </div>
+            </div>-->
+
+            <mat-grid-list class="gridListContainer" cols="3">
+                <mat-grid-tile *ngFor="let prod of productList; index as i; first as isFirst">
+                    <app-product-card [product]="prod" [parent]="'listaProductos'"></app-product-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+<!--
             <div class = "item-list">
                 <div class = "item">
                     <div class = "item-img">
@@ -132,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     </body>

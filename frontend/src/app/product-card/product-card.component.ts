@@ -9,11 +9,31 @@ import { ProductService } from '../services/product.service';
 export class ProductCardComponent {
 
   @Input() product: any;
+  @Input() parent: string = '';
 
-  constructor(private prodService: ProductService, private router: Router) { }
+  class: string = 'card';
+  show: boolean = true;
+  constructor(private prodService: ProductService, private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
+    console.log(this.parent);
+    console.log(this.product);
+    
+    if(this.parent != 'listaProductos'){
+      this.show = true;
+    } else {
+      this.show = false;
+      this.class = 'lista-productos-card';
+    }
 
+    if(this.product.status == 'available' && this.parent != 'listaProductos'){
+      this.show = true;
+    } else {
+      this.show = false;
+    }
+    
   }
 
   viewProd(): void {

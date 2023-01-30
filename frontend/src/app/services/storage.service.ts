@@ -8,6 +8,8 @@ const TOKEN_KEY = 'auth-token';
 })
 export class StorageService {
 
+  public loggedIn:Boolean = false;
+
   constructor() { }
 
   clean(): void {
@@ -44,11 +46,16 @@ export class StorageService {
     return null;
   }
 
-  public isLoggedIn(): boolean {
+  public isLoggedIn(): Boolean {
     const user = this.getToken();
-   
+    (user !== null) ? this.loggedIn = true : this.loggedIn = false;
     
-    return (user !== null) ? true : false;
+    return this.loggedIn;
 
+  }
+
+  public removeSession(): void {
+    window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.removeItem(TOKEN_KEY);
   }
 }

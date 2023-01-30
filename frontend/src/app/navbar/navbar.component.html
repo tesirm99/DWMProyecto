@@ -2,27 +2,21 @@
     <mat-toolbar color="primary">
         <mat-toolbar-row>
           <h1 class="navTitle">DWM - Sneaker Shop</h1>
-          
+
           <div class="navMenu">
-            <a mat-button [routerLink]="'/'"> <mat-icon aria-hidden="false" aria-label="Home icon" fontIcon="home"></mat-icon> </a>
-            <!-- Aqui habra un IF para si está logged in se muestre el icono del perfil y si no el iniciar sesión-->
-            <!-- Será un dropdown menu => si está iniciada la sesión tendrá tres enlaces: Perfil, Mis compras, Mis ventas y Cerrar sesión -->
+            <a mat-button [routerLink]="'/'"> <mat-icon aria-hidden="false" aria-label="Cart icon" fontIcon="home"></mat-icon> </a>
+            
             <div *ngIf="isLogged">
-                <button mat-button [matMenuTriggerFor]="menu"> Menu </button>
-                <mat-menu #menu="matMenu" class="menuDropDown">
-                    <button mat-menu-item [routerLink]="'/profile'"> Perfil </button>
-                    <button mat-menu-item (click)="logOut()"> Cerrar sesión </button>
-                </mat-menu>
+                <button mat-button [routerLink]="'/shopping-cart'" class="btn btn-outline-secondary"><mat-icon aria-hidden="false" aria-label="cart" fontIcon="shopping_cart"></mat-icon></button>
+                <button mat-button [routerLink]="'/profile'"><mat-icon aria-hidden="false" aria-label="person" fontIcon="person"></mat-icon> {{usr}} </button>
+                <button mat-button (click)="logOut()"><mat-icon aria-hidden="false" aria-label="logout" fontIcon="logout"></mat-icon></button>
             </div>
     
             <!-- => Si no está iniciada sesión será un dropdown menu con un formulario para iniciar sesión y un enlace para registrarse debajo del botón de iniciar sesión-->
 
            <div *ngIf="!isLogged">
-            <button mat-button [matMenuTriggerFor]="menu"> Menu </button>
-            <mat-menu #menu="matMenu" class="menuDropDown">
-                <button mat-menu-item (click)="openLoginDialog()"> Iniciar sesión </button>
-                <button mat-menu-item (click)="openSignupDialog()"> Registrarse </button>
-            </mat-menu>
+                <button mat-button (click)="openLoginDialog()"> Iniciar sesión </button>
+                <button mat-button (click)="openSignupDialog()"> Registrarse </button>
            </div>
       
           </div>

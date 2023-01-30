@@ -3,7 +3,8 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
 import { StorageService } from '../services/storage.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,10 +14,10 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private storageService: StorageService, private router: Router) { }
-
+  constructor(public dialog: MatDialog, private storageService: StorageService, private router: Router, private userService: UserService) { }
+  usr: string = '';
   @Input()
-  isLogged = false;
+  isLogged:Boolean = false;
 
   openLoginDialog(): void {
     
@@ -42,7 +43,17 @@ export class NavbarComponent implements OnInit {
   
   ngOnInit(): void {
     this.isLogged = this.storageService.isLoggedIn();
-    
+    console.log('isLogged', this.isLogged);
+    if(this.isLogged){
+      this.userService.getUserData().subscribe((data: any) => {
+        console.log('data', data);
+        
+        this.usr = JSON.parse(data).username;
+        console.log('usr', this.usr);
+      }
+      );
+    }
   }
+  
 
 }

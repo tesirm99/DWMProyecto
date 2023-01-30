@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lista-productos',
@@ -6,14 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['lista-productos.component.css']
 })
 export class ListaProductosComponent implements OnInit {
-   
+  
+  @Input()
+  productList: any = undefined;
+
+  constructor() { }
+
   sort = 'desc';
-   ngOnInit(): void {
+  ngOnInit(): void {
+    console.log(this.productList);
     
- 
-      
-   }
-   onSortUpdated(newSort: any): void {
-    this.sort = newSort;
   }
+
+  /*onSortUpdated(newSort: any): void {
+    this.sort = newSort;
+  }*/
+
+
+
  }

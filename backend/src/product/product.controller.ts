@@ -18,6 +18,11 @@ export class ProductController {
         return await this.productService.getProductList(ownerId);
     }
 
+    @Get('/featuredList')
+    async getFeaturedProductList() {
+        return await this.productService.getFeaturedProductList();
+    }
+
     @Post('/create')
     async createProduct(@Request() req) {
         return await this.productService.createProduct(req.body);
@@ -34,12 +39,12 @@ export class ProductController {
         return await this.productService.deleteProduct(id);
     }
 
-    @Get('/data/:id')
+    @Get('/dataById/:id')
     async getProduct(@Param('id') id: string) {
         return await this.productService.getProduct(id);
     }
 
-    @Get('/data/:name')
+    @Get('/dataByName/:name')
     async findOneByName(@Param('name') name: string) {
         return await this.productService.findOneByName(name);
     }
@@ -49,25 +54,31 @@ export class ProductController {
         return await this.productService.findOneByDescription(description);
     }*/
 
-    @Get('/data/:price')
+    @Get('/dataByPrice/:price')
     async findOneByPrice(@Param('price') price: string) {
         return await this.productService.findOneByPrice(price);
     }
 
-    @Get('/data/:image')
-    async findOneByImage(@Param('image') image: string) {
-        return await this.productService.findOneByImage(image);
-    }
-
-    @Get('/data/:owner')
+    @Get('/dataByOwner/:owner')
     async findOneByOwner(@Param('owner') owner: string) {
         return await this.productService.findOneByOwner(owner);
     }
 
-    @Get('/data/:size')
+    @Get('/dataBySize/:size')
     async findOneBySize(@Param('size') size: string) {
         return await this.productService.findOneBySize(size);
     }
 
+    @Get('/purchases/:id')
+    async getUserPurchases(@Param() params) {
+        console.log(params.id);
+        
+        return await this.productService.getUserPurchases(params.id);
+    }
+
+    @Post('confirmPayment')
+    async confirmPayment(@Request() req) {
+        return await this.productService.confirmPayment(req.body);
+    }
 
 }

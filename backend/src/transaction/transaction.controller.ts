@@ -11,12 +11,12 @@ export class TransactionController {
         return await this.transactionService.getAllTransactionList();
     }
 
-    @Get('/list/:productId')
+    @Get('/listByProd/:productId')
     async getTransactionListByProduct(@Param('productId') productId: string) {
         return await this.transactionService.getTransactionListByProduct(productId);
     }
 
-    @Get('/list/:buyerId')
+    @Get('/listByBuyer/:buyerId')
     async getTransactionListByBuyer(@Param('buyerId') buyerId: string) {
         return await this.transactionService.getTransactionListByBuyer(buyerId);
     }

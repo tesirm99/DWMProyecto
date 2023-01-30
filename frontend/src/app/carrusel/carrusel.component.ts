@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-carrusel',
   templateUrl: './carrusel.component.html',
@@ -6,35 +7,33 @@ import { Component} from '@angular/core';
 })
 export class CarruselComponent{
 
-  slideConfig={
+  slideConfig = {
     slidesToShow: 2,
     slidesToScroll: 1,
     dots: true, 
     infinite: true, 
     autoplay: true
-  }
+  };
 
-  images = [
-    {img: "https://media.restocks.net/products/DD1873-102/nike-dunk-low-next-nature-black-white-w-1-1000.png", 
-    href: "https://restocks.net/es/p/nike-dunk-low-next-nature-black-white-w?size_id=7&valuta=EUR&country=ES&msclkid=33c99852768d1f4eaffafbefc7a8b286&utm_source=bing&utm_medium=cpc&utm_campaign=Restocks%20%7C%20Shopping%20%7C%20Spanje&utm_term=4588055869646033&utm_content=Alle%20producten", 
-    ref: "Nike-Black"},
-    {img: "https://media.restocks.net/products/DV0827-100/nike-dunk-low-plaid-1-1000.png", 
-    href: "https://restocks.net/es/p/nike-dunk-low-plaid",
-    ref: "Nike-Plaid"},
-    {img: "https://media.restocks.net/products/DV1694-900/nike-dunk-low-se-acid-wash-gs-1-1000.png", 
-    href: "https://restocks.net/es/p/nike-dunk-low-se-acid-wash-gs",
-    ref: "Nike-Acid"}, 
-    {img: "https://media.restocks.net/products/DR0156-800/nike-dunk-low-safari-swoosh-kumquat-1-1000.png", 
-    href: "https://restocks.net/es/p/nike-dunk-low-safari-swoosh-kumquat",
-    ref: "Nike-Safari"}, 
-    {img: "https://media.restocks.net/products/DV0833-300/nike-dunk-low-reverse-brazil-1-1000.png", 
-    href: "https://restocks.net/es/p/nike-dunk-low-reverse-brazil",
-    ref: "Nike-Brazil"}
-  ]
-  constructor(){
+  loading = true;
+  carProds: any = [];
+ 
+  constructor(private prodService: ProductService){
   }
 
   ngOnInit(){
+
+    this.prodService.getFeaturedProducts().subscribe(
+      data => {
+        console.log(data);
+        
+        this.carProds = data;
+        this.carProds = this.carProds.slice(0, 5);
+        this.loading = false;
+        console.log(this.carProds);
+        
+      }
+    );
 
   }
 }

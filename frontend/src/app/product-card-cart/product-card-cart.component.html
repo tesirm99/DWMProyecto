@@ -1,0 +1,16 @@
+
+<div class="Cart-Items">
+        <div class="image-box">
+            <img src="{{product.image}}"  class="image-size" />
+        </div>
+        <div class="about">
+            <h1 class="title">{{product.name}}</h1>
+            <h3 class="subtitle">{{product.description}}</h3>
+        </div>
+        <div class="counter">
+        </div>
+        <div class="prices">
+            <div class="amount">{{product.price}}€</div>
+            <div class="remove"><u (click)="removeItem()">Remove</u></div>
+        </div>
+</div>

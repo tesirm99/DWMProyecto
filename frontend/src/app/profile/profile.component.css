@@ -1,7 +1,126 @@
+
+
 .profileContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     margin: 20px;
     
+}
+
+.body{
+    background-color: rgb(0 0 0 / 2%);
+}
+
+.greeting{
+    width: auto;
+    list-style: none;
+    height: 100px;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: -.4px;
+    line-height: 3rem;
+    font-weight: 800;
+    display:flex;
+    justify-content: center;
+}
+.greeting_txt{
+    margin-top: 20px;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navProfile{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+.optionsProfile ul {
+	border: 1px solid #ebebeb;
+	padding-left: 20px;
+	padding-bottom: 12px;
+}
+
+.optionsProfile ul li {
+	list-style: none;
+}
+
+.optionsProfile ul li a {
+	font-size: 16px;
+	color: #1c1c1c;
+	line-height: 39px;
+	display: block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.lista_compras{
+    border-radius: 0.2cm;
+}
+
+.lista_ventas{
+    border-radius: 0.2cm;
+}
+#button_sell{
+    background-color: rgb(224, 222, 222);
+    width: 100%;
+    height: 45px;
+	font-size: 16px;
+	color: #000000;
+    font-weight: 550;
+    border: 0px solid #ebebeb;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+#button_sell:hover{
+    background-color: rgb(180, 180, 180);
+    transition: 0.2s;
+    cursor: pointer;
+    
+    
+}
+.product{
+    margin-top: 30px;
+}
+.name_list{
+    position: relative;
+    text-align: center;
+    background-color: #3f51b5;
+    color: white;
+    margin-bottom: 0cm;
+    border: 0px solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name_list_purchase{
+    position: relative;
+    text-align: center;
+    background-color: #3f51b5;
+    color: white;
+    margin-bottom: 10px;
+    border: 0px solid;
+    border-radius: 10px;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    border-radius: 10px;
+    background-color: #3f51b5;
+    margin-bottom: 10px;
+    align-items: center;
+
 }

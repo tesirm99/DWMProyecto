@@ -1,16 +1,16 @@
 
-.head{
+.head_title{
     background-image: url("https://th.bing.com/th/id/R.a3d417b04908132e6a8339076746cdac?rik=Yt20ypRK5aRuZw&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f82%2f77%2fuYsL97.png&ehk=dSYMDIr1TXVnEeNs14T9Va%2bGxcRweT3MqvY%2fKdj2DJ4%3d&risl=&pid=ImgRaw&r=0");
-    width: auto;
+    width: 100%;
     list-style: none;
     opacity: 70%;
-    min-height: 100vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: poppins,sans-serif;
+    font-family: sans-serif;
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     padding: 15px;
 }
 
@@ -26,41 +26,41 @@ fieldset {
     border: 0;
 }
 
-.head form legend {
+.head_title form legend {
     font-size: 30px;
     color: #fff;
     font-weight: 800;
     text-align: center;
     margin-bottom: 59px;
 }
-.head form .inner-form {
+.head_title form .inner-form {
     width: 75%;
     margin-bottom: 17px;
 }
 
-.head form .inner-form .input-field {
+.head_title form .inner-form .input-field {
     margin-bottom: 20px;
     height: 30px;
 }
-.head form .inner-form .input-field input {
+.head_title form .inner-form .input-field input {
     height: 50%;
     border: 0;
     background: #fff;
     display: block;
     padding: 10px 32px 10px 70px;
     font-size: 18px;
-    color: #666;
+    color: rgb(171, 171, 171);
     border-radius: 34px;
     width: 100%;
 }
 
-.head form .inner-form .input-field {
+.head_title form .inner-form .input-field {
     height: 70px;
     width: 100%;
     position: relative;
 }
 
-.head form .inner-form .input-field .btn-search {
+.head_title form .inner-form .input-field .btn-search {
     width: 70px;
     position: absolute;
     left: 0;
@@ -81,7 +81,7 @@ fieldset {
 
 .components{
     margin-top: 10px;
-    background-color: rgba(239, 237, 237, 0.893);
+    background-color: rgb(0 0 0 / 2%);
     
 }
 
@@ -89,7 +89,6 @@ fieldset {
     margin-top: 30px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 .text_filters{
     position: relative;
@@ -107,7 +106,7 @@ fieldset {
 	padding-bottom: 12px;
 }
 
-.filter__categories ul li {
+.filter__categories ul li { 
 	list-style: none;
 }
 
@@ -129,4 +128,10 @@ mat-slider {
 .slider_range{
     padding-left: 40px;
 	padding-bottom: 12px;
+}
+.list_products{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    width: 100%;
 }
