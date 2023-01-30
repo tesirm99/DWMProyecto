@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-carrusel',
   templateUrl: './carrusel.component.html',
@@ -6,13 +7,13 @@ import { Component} from '@angular/core';
 })
 export class CarruselComponent{
 
-  slideConfig={
+  slideConfig = {
     slidesToShow: 2,
     slidesToScroll: 1,
     dots: true, 
     infinite: true, 
     autoplay: true
-  }
+  };
 
   images = [
     {img: "https://media.restocks.net/products/DD1873-102/nike-dunk-low-next-nature-black-white-w-1-1000.png", 
@@ -31,10 +32,16 @@ export class CarruselComponent{
     href: "https://restocks.net/es/p/nike-dunk-low-reverse-brazil",
     ref: "Nike-Brazil"}
   ]
-  constructor(){
+  constructor(private prodService: ProductService){
   }
 
   ngOnInit(){
+
+    this.prodService.getFeaturedProducts().subscribe(
+      data => {
+        
+      }
+    );
 
   }
 }

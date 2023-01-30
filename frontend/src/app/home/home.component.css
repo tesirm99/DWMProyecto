@@ -1,16 +1,16 @@
 
 .head_title{
     background-image: url("https://th.bing.com/th/id/R.a3d417b04908132e6a8339076746cdac?rik=Yt20ypRK5aRuZw&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f82%2f77%2fuYsL97.png&ehk=dSYMDIr1TXVnEeNs14T9Va%2bGxcRweT3MqvY%2fKdj2DJ4%3d&risl=&pid=ImgRaw&r=0");
-    width: auto;
+    width: 100%;
     list-style: none;
     opacity: 70%;
-    height: 70%;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     padding: 15px;
 }
 

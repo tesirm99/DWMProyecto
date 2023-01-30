@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  filterByBrand(brand: string){
+
+  }
   
 
 }

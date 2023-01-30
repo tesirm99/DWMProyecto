@@ -109,7 +109,7 @@ export class ProductService {
   }
 
   async getFeaturedProductList() {
-    const q = await this.productModel.find().exec();
+    const q = await this.productModel.find({ status: "available"}).exec();
     console.log('Get Featured Product List: ', q);
     return q.slice(0, 12);
   }

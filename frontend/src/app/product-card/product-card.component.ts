@@ -18,8 +18,15 @@ export class ProductCardComponent {
 
   ngOnInit(): void {
     console.log(this.parent);
-
+    console.log(this.product);
+    
     if(this.parent != 'listaProductos'){
+      this.show = true;
+    } else {
+      this.show = false;
+    }
+
+    if(this.product.status == 'available'){
       this.show = true;
     } else {
       this.show = false;

@@ -18,8 +18,10 @@ export class ListaProductosComponent implements OnInit {
     
   }
 
-  onSortUpdated(newSort: any): void {
+  /*onSortUpdated(newSort: any): void {
     this.sort = newSort;
-  }
+  }*/
+
+
 
  }

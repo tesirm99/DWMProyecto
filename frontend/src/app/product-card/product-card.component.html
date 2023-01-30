@@ -21,17 +21,19 @@
 
             <div class="product-card-cart-content-description">{{product.description}}</div>
           
-              <div class="product-card-cart-content-size list-group-item">
-                <div>Size: </div>
-                <span class="badge bg-secondary">{{product.size}}</span>
+            <div class="product-card-cart-content-size list-group-item">
+              <div>Size: <span style="font-weight: normal">{{product.size}}</span></div>
+            </div>
+            <div class="product-card-cart-content-size list-group-item">
+              <div>Status: <span style="font-weight: normal">{{product.status}}</span></div>
+            </div>
+            <div class="product-card-cart-content-remove list-group-item">
+              <div id="price">
+                  <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
+                  
+                  <button *ngIf="show" (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>   
               </div>
-              <div class="product-card-cart-content-remove list-group-item">
-                <div id="price">
-                    <button (click)="viewProd()"><mat-icon fontIcon="visibility"></mat-icon></button>
-                    
-                    <button *ngIf="show" (click)="deleteProd()"><mat-icon fontIcon="delete"></mat-icon></button>   
-                </div>
-              </div>
+            </div>
             </div>
           
          </div>
