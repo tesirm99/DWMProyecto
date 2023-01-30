@@ -50,4 +50,8 @@ export class UserService {
     return this.http.post(API_URL + 'product/create', body, { responseType: 'text' });
   }
 
+  deleteUser(){
+    return this.http.delete(API_URL + 'user/delete/' + this.storageService.getUser(), { responseType: 'text' });
+  }
+
 }

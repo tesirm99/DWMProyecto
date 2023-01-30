@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListaProductosComponent implements OnInit {
   
   @Input()
-  productList: any;
+  productList: any = undefined;
 
   constructor() { }
 

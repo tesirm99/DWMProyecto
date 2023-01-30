@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
     this.productService.getProductsByName(searchTerm).subscribe({
       next: data => {
         console.log(data);
+        this.productList = data;
       },
       error: err => {
         console.log(err);

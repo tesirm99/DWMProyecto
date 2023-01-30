@@ -72,7 +72,7 @@ export class LoginComponent {
 
       this.dialogRef.close();
       this.reloadPage();
-    }, 1000);
+    }, 500);
 
   }
 }
