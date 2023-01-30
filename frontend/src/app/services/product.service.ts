@@ -19,4 +19,12 @@ export class ProductService {
     
     return this.httpClient.delete(API_URL + 'data/delete/' + _id);
   }
+
+  getProductsByName(name: string) {
+    return this.httpClient.get(API_URL + 'dataByName/' + name);
+  }
+
+  getFeaturedProducts() {
+    return this.httpClient.get(API_URL + 'featuredList');
+  }
 }

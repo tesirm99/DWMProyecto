@@ -1,4 +1,4 @@
 <p class="text">Here are the sneakers you are selling!</p>
 <mat-grid-list cols="1" *ngFor="let venta of sales; index as i; first as isFirst">
-        <app-product-card [product]="venta"></app-product-card>
+        <app-product-card [product]="venta" [parent]="'listaVentas'"></app-product-card>
 </mat-grid-list>

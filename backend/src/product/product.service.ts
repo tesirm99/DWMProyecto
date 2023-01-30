@@ -8,105 +8,113 @@ import { Transaction, TransactionDocument } from 'src/transaction/transaction.sc
 @Injectable()
 export class ProductService {
 
-    constructor(
-        @InjectConnection() private connection: Connection,
-        @InjectModel(Product.name) private productModel: Model<ProductDocument>,
-        @InjectModel(Transaction.name) private transactionModel: Model<TransactionDocument>
-    ) {}
-        
-    
-    async getProduct(id: string) {
-
-      const q = await this.productModel.find({_id: id}).exec();
-      console.log('Found product', q)
+  constructor(
+      @InjectConnection() private connection: Connection,
+      @InjectModel(Product.name) private productModel: Model<ProductDocument>,
+      @InjectModel(Transaction.name) private transactionModel: Model<TransactionDocument>
+  ) {}
       
-      return q[0];
-        
-    }
+  
+  async getProduct(id: string) {
 
-    deleteProduct(id: string) {
-        const q = this.productModel.deleteOne({_id: id}).exec();
-        console.log('Deleted product', q)
-        return q;
-    }
+    const q = await this.productModel.find({_id: id}).exec();
+    console.log('Found product', q)
+    
+    return q[0];
+      
+  }
 
-    updateProduct(req: any) {
-        throw new Error('Method not implemented.');
-    }
+  deleteProduct(id: string) {
+      const q = this.productModel.deleteOne({_id: id}).exec();
+      console.log('Deleted product', q)
+      return q;
+  }
 
-    async createProduct(createdProductDto: any) {
+  updateProduct(req: any) {
+      throw new Error('Method not implemented.');
+  }
 
-        console.log('Create product: ', createdProductDto);
+  async createProduct(createdProductDto: any) {
 
-        const createdProduct = await this.productModel.create(createdProductDto);
+      console.log('Create product: ', createdProductDto);
 
-        console.log('Created product: ', createdProduct);
+      const createdProduct = await this.productModel.create(createdProductDto);
 
-        const createdTransaction = await this.transactionModel.create({
-            buyer: "NONE",
-            seller: createdProductDto.owner,
-            product: createdProduct._id,
-            status: 'available'
-        });
+      console.log('Created product: ', createdProduct);
 
-        console.log('Created transaction: ', createdTransaction);
-        
-        return [createdProduct, createdTransaction];
-    }
+      const createdTransaction = await this.transactionModel.create({
+          buyer: "NONE",
+          seller: createdProductDto.owner,
+          product: createdProduct._id,
+          status: 'available'
+      });
 
-    async getProductList(ownerId: string) {
-        
-        const q = await this.productModel.find({owner: ownerId}).exec();
+      console.log('Created transaction: ', createdTransaction);
+      
+      return [createdProduct, createdTransaction];
+  }
 
-        console.log('Get Product List from ' + ownerId + ': ', q);
-        
+  async getProductList(ownerId: string) {
+      
+      const q = await this.productModel.find({owner: ownerId}).exec();
 
-        return q;
-    }
+      console.log('Get Product List from ' + ownerId + ': ', q);
+      
 
-    async getAllProductList() {
-        const q = await this.productModel.find().exec();
-        
-        console.log('Get All Product List: ', q);
+      return q;
+  }
 
-        return q;
-    }
+  async getAllProductList() {
+      const q = await this.productModel.find().exec();
+      
+      console.log('Get All Product List: ', q);
 
-      async findOneByName(name: string): Promise<Product> {
-        const q = await this.productModel.find({name: name}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+      return q;
+  }
 
-      async findOneByDescription(description: string): Promise<Product> {
-        const q = await this.productModel.find({description: description}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+  async findOneByName(name: string): Promise<Product> {
+    console.log(name);
+    const regex = new RegExp(name, 'i');
+    const q = await this.productModel.find({name: { $regex: regex }}).exec();
+    console.log('Found product by name', q);
+    return q[0];
+  }
 
-      async findOneByPrice(price: string): Promise<Product> {
-        const q = await this.productModel.find({price: price}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+  async findOneByDescription(description: string): Promise<Product> {
+    const q = await this.productModel.find({description: description}).exec();
+    console.log('Found product', q);
+    return q[0];
+  }
 
-      async findOneByImage(image: string): Promise<Product> {
-        const q = await this.productModel.find({image: image}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+  async findOneByPrice(price: string): Promise<Product> {
+    const q = await this.productModel.find({price: price}).exec();
+    console.log('Found product', q);
+    return q[0];
+  }
 
-      async findOneByOwner(owner: string): Promise<Product> {
-        const q = await this.productModel.find({owner: owner}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+  async findOneByImage(image: string): Promise<Product> {
+    const q = await this.productModel.find({image: image}).exec();
+    console.log('Found product', q);
+    return q[0];
+  }
 
-      async findOneBySize(size: string): Promise<Product> {
-        const q = await this.productModel.find({size: size}).exec();
-        console.log('Found product', q);
-        return q[0];
-      }
+  async findOneByOwner(owner: string): Promise<Product> {
+    const q = await this.productModel.find({owner: owner}).exec();
+    console.log('Found product', q);
+    return q[0];
+  }
+
+  async findOneBySize(size: string): Promise<Product> {
+    const q = await this.productModel.find({size: size}).exec();
+    console.log('Found product', q);
+    return q[0];
+  }
+
+  async getFeaturedProductList() {
+    const q = await this.productModel.find().exec();
+    console.log('Get Featured Product List: ', q);
+    return q.slice(0, 12);
+  }
 
 
 }
